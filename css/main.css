@@ -8,7 +8,6 @@ body {
     font-size: 15px;
     color: #eff4ff !important;
     background: #000000 linear-gradient(to right,#000000,#000000 );
-    overflow-x: hidden;
 }
 
 hr {
@@ -170,6 +169,10 @@ a:visited {
     z-index: -100;
     transition: 1s opacity;
     opacity: 0.8;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
 }
 
 .animationdelay1s{
