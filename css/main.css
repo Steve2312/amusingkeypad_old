@@ -9,7 +9,6 @@ body {
     color: #eff4ff !important;
     background: #000000 linear-gradient(to right,#000000,#000000 );
     overflow-x: hidden;
-    white-space: nowrap;
 }
 
 .banner-nav-img {
