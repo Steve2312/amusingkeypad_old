@@ -15,7 +15,7 @@ body {
     /* The image used */
     background-image: url('https://steve2312.github.io/antecer/1.jpg');
     /* Full height */
-    height: 100%;
+    width: 100%;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
@@ -246,12 +246,34 @@ a:visited {
     }
 }
 
-
-@media only screen and (max-width: 991px) {
+.logo {
+    width: 90%;
 }
 
-@media only screen and (max-width: 767px) {
+.marginamusingtext {
+    margin-top: 250px;
+    white-space: nowrap;
+}
 
+@media only screen and (max-width: 1000px) {
+    .logo {
+        width: 80% !important;
+    }
+
+    .marginamusingtext {
+        margin-top: 110px !important;
+        transform: scale(0.8);
+    }
+}
+
+@media only screen and (max-width: 1900px) {
+    .logo {
+        width: 90%;
+    }
+
+    .marginamusingtext {
+        margin-top: 250px;
+    }
 }
 
 .keypadall img{
