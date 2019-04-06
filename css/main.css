@@ -247,15 +247,12 @@ a:visited {
     }
 }
 
-@media only screen and (max-width: 1100px) {
-    .logo {
-        width: 70% !important;
-    }
+.logo {
+    width: 90%;
+}
 
-    .marginamusingtext {
-        margin-top: 110px !important;
-        transform: scale(0.8);
-    }
+.marginamusingtext {
+    margin-top: 250px;
 }
 
 @media only screen and (max-width: 1900px) {
@@ -265,6 +262,61 @@ a:visited {
 
     .marginamusingtext {
         margin-top: 250px;
+    }
+}
+
+@media only screen and (max-width: 1601px) {
+    .logo {
+        width: 80%;
+    }
+
+    .marginamusingtext {
+        margin-top: 200px;
+        transform: scale(0.9);
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .logo {
+        width: 70%;
+    }
+
+    .marginamusingtext {
+        margin-top: 200px;
+        transform: scale(0.9);
+    }
+}
+
+@media (height: 720px) and (width: 1280px) {
+    .logo {
+        width: 60%;
+    }
+
+    .marginamusingtext {
+        margin-top: 150px;
+        transform: scale(0.8);
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .logo {
+        width: 70%;
+    }
+
+    .marginamusingtext {
+        margin-top: 110px;
+        transform: scale(0.8);
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .logo {
+        width: 50%;
+    }
+
+    .marginamusingtext {
+        margin-top: 50px;
+        transform: scale(0.8);
     }
 }
 
