@@ -33,6 +33,15 @@ a:visited {
   font-size: 18px;
   line-height: 20px;
 }
+
+.left{
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
 #navicon{
   text-decoration: none;
   color: #FF0092;
