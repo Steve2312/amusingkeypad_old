@@ -8,6 +8,7 @@ body {
     font-size: 15px;
     color: #eff4ff !important;
     background: #000000 linear-gradient(to right,#000000,#000000 );
+    overflow-x: hidden;
 }
 
 hr {
