@@ -9,10 +9,6 @@ body {
     background: #000000 linear-gradient(to right,#000000,#000000 );
 }
 
-body {
-    overflow-x: hidden !important;
-}
-
 hr {
     width: 100%;
     opacity: 0.5;
