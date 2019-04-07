@@ -19,7 +19,7 @@ window.onscroll = function () { myFunction() };
         var firstrow = document.getElementById("firstrow");
         var firstrow2 = document.getElementById("firstrow2");
         var firstrowtitle = document.getElementById("firstrowtitle");
-        if (window.pageYOffset > 150) {
+        if (window.pageYOffset > sticky) {
             firstrow.style.display = 'block';
             firstrow2.style.display = 'block';
             firstrowtitle.style.display = 'block';

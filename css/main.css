@@ -13,7 +13,7 @@ body {
 
 .banner-nav-img {
     /* The image used */
-    background-image: url('https://steve2312.github.io/antecer/1.jpg');
+    background-image: linear-gradient(transparent, transparent, #000000), url('https://steve2312.github.io/antecer/1.jpg');
     /* Full height */
     width: 100%;
     /* Center and scale the image nicely */
@@ -270,72 +270,76 @@ a:visited {
     width: 90%;
 }
 
-.marginamusingtext {
+.marginlogo {
+    margin-top: 100px;
+}
+
+.marginamusingtext1 {
     margin-top: 250px;
+    transform: scale(0.9);
+    white-space: nowrap;
 }
 
-@media only screen and (max-width: 1900px) {
-    .logo {
-        width: 90%;
-    }
-
-    .marginamusingtext {
-        margin-top: 250px;
-    }
-}
-
-@media only screen and (max-width: 1601px) {
+@media only screen and (max-width: 1199px) {
     .logo {
         width: 80%;
     }
 
-    .marginamusingtext {
-        margin-top: 200px;
-        transform: scale(0.9);
-    }
-}
-
-@media only screen and (max-width: 1300px) {
-    .logo {
-        width: 70%;
-    }
-
-    .marginamusingtext {
-        margin-top: 200px;
-        transform: scale(0.9);
-    }
-}
-
-@media (height: 720px) and (width: 1280px) {
-    .logo {
-        width: 60%;
-    }
-
-    .marginamusingtext {
+    .marginamusingtext1 {
         margin-top: 150px;
         transform: scale(0.8);
     }
 }
 
-@media only screen and (max-width: 1100px) {
-    .logo {
-        width: 70%;
-    }
-
-    .marginamusingtext {
-        margin-top: 110px;
-        transform: scale(0.8);
-    }
-}
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 992px) {
     .logo {
         width: 50%;
     }
 
-    .marginamusingtext {
+    .marginamusingtext1 {
+        margin-top: 0px;
+        transform: scale(0.6);
+    }
+}
+
+/*Driver Support*/
+.downloaddriver {
+    transform: scale(1);
+    margin-top: 150px;
+}
+
+.driverss {
+    margin-top: 110px;
+}
+
+@media only screen and (max-width: 991px) {
+    .downloaddriver {
+        transform: scale(0.8);
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .logo {
+        width: 60%;
+    }
+
+    .marginamusingtext1 {
         margin-top: 50px;
         transform: scale(0.8);
+    }
+
+    .marginlogo {
+        margin-top: 50px;
+    }
+
+    .downloaddriver {
+        transform: scale(0.8);
+        margin-top: 200px;
+    }
+
+    .driverss {
+        margin-top: 10px;
     }
 }
 
