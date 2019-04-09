@@ -13,7 +13,7 @@ body {
 
 .banner-nav-img {
     /* The image used */
-    background-image: linear-gradient(transparent, transparent, #000000), url('https://steve2312.github.io/antecer/1.jpg');
+    background-image: linear-gradient(transparent, transparent, #000000), url("../images/1.jpg");
     /* Full height */
     width: 100%;
     /* Center and scale the image nicely */
