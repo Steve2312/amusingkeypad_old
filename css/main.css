@@ -112,6 +112,37 @@ a:visited {
     animation: breathing 3s linear infinite;
 }
 
+.cz-nav li a {
+    text-decoration: none;
+    color: #eff4ff !important;
+    padding: 10px;
+    text-align: center;
+}
+
+.cz-nav li {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding: 20px;
+}
+
+.cz-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cz-nav i {
+    padding-right: 5px !important;
+}
+
+.cz-nav a:hover {
+    color: #2889ff !important;
+    transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    animation: breathing 3s linear infinite;
+}
+
 @-webkit-keyframes breathing {
     0% {
         -moz-text-shadow: 0px 0px 1px rgb(40, 137, 255);
@@ -154,6 +185,7 @@ a:visited {
 
 .sticky {
     position: fixed !important;
+    top: 0;
     width: 100% !important;
     background: rgba(0,0,0, 0.8) !important;
     z-index: 3 !important;
@@ -162,10 +194,16 @@ a:visited {
 
 .stickyfirst {
     position: fixed;
+    top: 0;
     background: rgba(0,0,0, 0);
     transition: 0.5s background;
     width: 100%;
     z-index: 3;
+}
+
+.clickstickyfirst {
+    background: rgba(0,0,0, 0.8) !important;
+    transition: 0.5s background;
 }
 
 .marginextra {
@@ -319,6 +357,14 @@ a:visited {
     }
 }
 
+.navigation {
+    display: block;
+}
+
+.dropnavigation {
+    display: none;
+}
+
 @media only screen and (max-width: 767px) {
     .logo {
         width: 60%;
@@ -340,6 +386,14 @@ a:visited {
 
     .driverss {
         margin-top: 10px;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .dropnavigation {
+        display: inline-flex;
     }
 }
 

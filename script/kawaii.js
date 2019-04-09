@@ -2,6 +2,7 @@
 window.onscroll = function () { myFunction() };
 
     var navbar = document.getElementById("navbar");
+    var navbar2 = document.getElementById("navbar2");
     var navbarmargin = document.getElementById("navbarmargin");
     var sticky = navbar.offsetTop;
     var x = window.matchMedia("(max-width: 974px)")
@@ -10,10 +11,12 @@ window.onscroll = function () { myFunction() };
 
     function myFunction() {
         if (window.pageYOffset > sticky) {
-            navbar.classList.add("sticky")
+            navbar.classList.add("sticky");
+            navbar2.classList.add("sticky");
         } 
         if (!window.pageYOffset > sticky) {
             navbar.classList.remove("sticky");
+            navbar2.classList.remove("sticky");
         }
 
         var firstrow = document.getElementById("firstrow");
@@ -38,6 +41,28 @@ function submit() {
     if (input) {
         return window.open(tarckAPI + input); 
     }
+}
+
+function clicksticky() {
+
+    var navbar2 = document.getElementById("navbar2");
+    var check = document.getElementById("collapsibleNavbar");
+    var toggle = navbar2.classList.contains("clickstickyfirst");
+
+    if (check.classList.contains("collapsing")) {
+        return false;
+    }
+
+    if (!check.classList.contains("collapsing")) {
+        if (toggle === false) {
+            navbar2.classList.add("clickstickyfirst");
+        }
+
+        if (toggle === true) {
+            navbar2.classList.remove("clickstickyfirst");
+        }
+    }
+
 }
 
 function v3download() {
