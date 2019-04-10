@@ -18,6 +18,12 @@
     animation-fill-mode: both;
 }
 
+.animated3 {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 0.6s;
+}
+
 .animated.infinite {
   animation-iteration-count: infinite;
 }

@@ -19,10 +19,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="script/kawaii.js"></script>
+
+    <script>
+        $(window).on('beforeunload', function () {
+            $(window).scrollTop(0);
+        });
+    </script>
 </head>
 <body>
 
-    <nav id="navbar" class="navigation navbar navbar-inverse navbar-fixed-top animated fadeInDown stickyfirst" role="navigation">
+    <nav id="navbar" class="navigation navbar navbar-inverse navbar-fixed-top animated3 fadeInDown stickyfirst" role="navigation">
         <div class="container" style="margin-top: 5px;">
             <div class="navbar-header left">
                 <a style="border-color: #fff !important; transition: color 0.3s ease; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; animation: breathingwhite 3s linear infinite;" id="navicon" href="">
@@ -42,12 +48,12 @@
         </div>
     </nav>
 
-    <nav id="navbar2" class="dropnavigation navbar animated fadeInDown stickyfirst">
+    <nav id="navbar2" class="dropnavigation navbar animated3 fadeInDown stickyfirst">
         <a class="navbar-brand" style="border-color: #fff !important; transition: color 0.3s ease; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; animation: breathingwhite 3s linear infinite;" id="navicon" href="">
             <b>Antecer</b>
         </a>
-        <a onclick="clicksticky();" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span style="font-size: 25px;"><i class="fas fa-angle-down"></i></span>
+        <a onclick="clicksticky();" style="font-size: 25px;" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <i class="fas fa-angle-down"></i>
         </a>
         <div class="collapse navbar-collapse cz-nav" id="collapsibleNavbar">
             <ul class="navbar-right">
@@ -64,7 +70,7 @@
         <div class="container animated2 fadeIn" style="align-items: center; justify-content: center; text-align: center;">
             <div class="row">
 
-                <div class="col-md-5 animated bounceInLeft" style="display:block; margin-top: 100px;">
+                <div class="col-md-5 animated fadeInLeft" style="display:block; margin-top: 100px;">
                     <div class="row">
                         <div class="mx-auto d-block marginamusingtext1" style="justify-content: center; align-content: center; margin-bottom: auto;">
                             <h1 id="gradient">Amusing Keypad</h1>
@@ -79,7 +85,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-7 animated bounceInRight marginlogo" style="display:block;">
+                <div class="col-md-7 animated fadeInRight marginlogo" style="display:block;">
                     <div class="row">
                         <div class="mx-auto d-block" style="justify-content: center; align-content: center; margin-bottom: auto;">
                             <img class="logo" src="images/7.png">
@@ -88,15 +94,19 @@
                 </div>
             </div>
         </div>
-
-
     </div>
+
     <div class="container animated2 fadeIn" style="align-items: center; justify-content: center; text-align: center;">
 
         <hr style="margin-top: 70px;" />
 
         <div class="row" style="margin-top: 20px;">
-            <h1 class="animated fadeIn" style="margin-bottom: 50px; display:block">A <a class="animationdelay2s" id="gradient">keypad</a> is everything you need!</h1>
+            <div class="col-md-12 animated2 fadeIn" style="display:block;">
+                <h1 class="animated fadeIn" style="margin-bottom: 50px; display:block; text-align: left">A <a class="animationdelay2s" id="gradient">keypad</a> is everything you need!</h1>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-6 animated2  fadeIn" style="display:block;">
                 <div class="row">
                     <div class="keypadall mx-auto d-block" style="justify-content: center; align-content: center; margin-bottom: auto;">
@@ -134,7 +144,7 @@
                                     <strong>Configuration</strong> - It has a portable Windows software to change the configuration, the new
                                     configuration will be stored in the keyboard chip, even if you connect it to other devices can be used.
                                 </li>
-                            </ul>                       
+                            </ul>
 
                             <table class="table" style="margin-top: 100px;">
                                 <thead>
@@ -164,6 +174,59 @@
             </div>
         </div>
 
+        <div class="row" style="margin-top: 100px;">
+            <div class="col-md-12 animated2 fadeIn" style="display:block;">
+                <h1 class="animated fadeIn" style="margin-bottom: 50px; display:block; text-align: center;">When <a class="animationdelay2s" id="gradient">Steve</a> doesnt know <a class="animationdelay2s" id="gradient">what</a> to do!</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 animated2 fadeIn" style="display:block;">
+                <div class="row">
+                    <div class="mx-auto d-block" style="justify-content: center; align-content: center; margin-bottom: auto;">
+                        <div class="row">
+                            <div class="keypadall mx-auto d-block" style="justify-content: center; align-content: center; margin-bottom: auto;">
+                                <img src="idk.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 animated2 fadeIn" style="display: block;">
+                <div class="row">
+                    <div class="mx-auto" style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important;">
+                        <div style="margin: 30px;">
+                            <p>When <strong>Steve</strong> doesnt know what to write. Then u gotta tell Steve what to do, unless you dont want anything on the site.</p>
+                            <p><strong>Steve will do these things if u don't tell him what to do.:</strong></p>
+                            <ul>
+                                <li>
+                                    <strong>One</strong> - Lay down on the bed.
+                                </li>
+                                <li>
+                                    <strong>Two</strong> - Do nothing
+                                </li>
+                                <li>
+                                    <strong>Three</strong> - Ask Stubbs, Ramen or Antecer.
+                                </li>
+                                <li>
+                                    <strong>Four</strong> - sBeve
+                                </li>
+                                <li>
+                                    <strong>Five</strong> - Close Visual Studio.
+                                </li>
+                                <li>
+                                    <strong>Six</strong> - Give up.
+                                </li>
+                                <li>
+                                    <strong>Seven</strong> - Wasting his time on making this paragraph.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <hr style="margin-top: 70px;" />
 
         <div class="row">
@@ -179,11 +242,5 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $(this).scrollTop(0);
-        });
-    </script>
 </body>
-
 </html>

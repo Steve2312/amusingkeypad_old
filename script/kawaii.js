@@ -3,9 +3,7 @@ window.onscroll = function () { myFunction() };
 
     var navbar = document.getElementById("navbar");
     var navbar2 = document.getElementById("navbar2");
-    var navbarmargin = document.getElementById("navbarmargin");
     var sticky = navbar.offsetTop;
-    var x = window.matchMedia("(max-width: 974px)")
 
     console.log(window.pageYOffset);
 
