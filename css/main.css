@@ -11,18 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-.textleft{
-    text-align: left;
-}
-
-.textcenter {
-    text-align: center;
-}
-
-.textright {
-    text-align: right;
-}
-
 .banner-nav-img {
     /* The image used */
     background-image: linear-gradient(transparent, transparent, #000000), url("../images/1.jpg");
