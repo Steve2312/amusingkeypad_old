@@ -76,3 +76,18 @@ input {
 .customscale {
     min-width: 1140px;
 }
+
+#printSrc {
+    display: none;
+}
+
+@media print {
+    .navbar, .bgoof, .content {
+        display: none;
+    }
+
+    #printSrc {
+        display: block;
+    }
+}
+          
