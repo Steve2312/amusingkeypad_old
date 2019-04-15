@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 html, body {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 body {
     font-family: raleway,Helvetica,Arial,sans-serif;
@@ -31,7 +31,7 @@ hr {
 }
 
 a:visited {
-    color: #eff4ff !important;
+    color: #FFFFFF !important;
 }
 
 
@@ -51,10 +51,10 @@ a:visited {
     float: right;
 }
 
-#navicon{
-  text-decoration: none;
-  color: #FF0092;
-  font-size: 21px;
+#navicon {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 21px;
 }
 
 #navicon b{
@@ -467,3 +467,39 @@ a:visited {
 .table {
     border-collapse: collapse;
 }
+
+#contact_button {
+    color: white;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: rgba(0,0,0, 0.4) !important;
+    transition: background 0.3s ease;
+    -webkit-transition: background 0.3s ease;
+    -moz-transition: background 0.3s ease;
+    border: 1.5px solid #2889ff;
+    border-radius: 4px;
+    width: 90%;
+    margin: 5px;
+    text-decoration: none;
+}
+
+    #contact_button:hover {
+        background: rgba(0,0,0, 0.2) !important;
+        transition: background 0.3s ease;
+        -webkit-transition: background 0.3s ease;
+        -moz-transition: background 0.3s ease;
+    }

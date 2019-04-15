@@ -71,3 +71,13 @@ function prodownload() {
     var download = "https://github.com/Antecer/AmusingKeypad/releases/latest";
     window.open(download);
 }
+
+function copyToClipboard(text) {
+    var dummy = document.createElement("input");
+    document.body.appendChild(dummy);
+    dummy.setAttribute('value', text);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    alert(text + " has been copied succesfully!")
+}
