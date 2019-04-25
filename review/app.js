@@ -42,42 +42,36 @@ function getAllUrlParams(url) {
 }
 console.log(getAllUrlParams().track_id);
 
-firebase.initializeApp({
-    projectId: 'bothibiki-190909'
-});
+var track_id_from_url = getAllUrlParams().track_id;
 
-var db = firebase.firestore();
 
-var docRef = db.collection("track_id").doc("KquEHhgciNNHa2yylrTb");
-
-docRef.get().then(function (doc) {
-    if (doc.exists) {
-        console.log("Document data:", doc.data().id);
-
-        var options = doc.data().id
-        var choice = getAllUrlParams().track_id;
-
-        if (options.indexOf(choice) !== -1) {
+if (!track_id_from_url) {
+    console.log('no match');
+    setTimeout(function () { fadeOutWaiting(); }, 2000);
+    setTimeout(function () { notfound(); }, 3000);
+}
+if (track_id_from_url) {
+    firebase.initializeApp({
+        projectId: 'bothibiki-190909'
+    });
+    var db = firebase.firestore();
+    var docRef = db.collection("track_id").doc(track_id_from_url);
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
             console.log('match');
             setTimeout(function () { fadeOutWaiting(); }, 2000);
             setTimeout(function () { found(); }, 3000);
             setTimeout(function () { redirect(); }, 5000);
-            
-        }
-
-        if (options.indexOf(choice) === -1) {
+        } 
+        if (!doc.exists) {
             console.log('no match');
             setTimeout(function () { fadeOutWaiting(); }, 2000);
             setTimeout(function () { notfound(); }, 3000);
         }
-
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch(function (error) {
-    console.log("Error getting document:", error);
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
     });
+}
 
 function found() {
     var waiting = document.getElementById("waiting");

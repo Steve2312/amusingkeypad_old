@@ -43,50 +43,42 @@ function getAllUrlParams(url) {
 
 console.log(getAllUrlParams().track_id);
 
-firebase.initializeApp({
-    projectId: 'bothibiki-190909'
-});
+var track_id_from_url = getAllUrlParams().track_id;
 
-var db = firebase.firestore();
-
-var docRef = db.collection("track_id").doc("KquEHhgciNNHa2yylrTb");
-
-docRef.get().then(function (doc) {
-    if (doc.exists) {
-        console.log("Document data:", doc.data().id);
-
-        var options = doc.data().id
-        var choice = getAllUrlParams().track_id;
-
-        if (options.indexOf(choice) !== -1) {
+if (track_id_from_url) {
+    firebase.initializeApp({
+        projectId: 'bothibiki-190909'
+    });
+    var db = firebase.firestore();
+    var docRef = db.collection("track_id").doc(track_id_from_url);
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
             console.log('match');
             var form_container = document.getElementById("form_container");
             form_container.style.display = 'block';
-
-        }
-
-        if (options.indexOf(choice) === -1) {
+        } 
+        if (!doc.exists) {
             console.log('no match');
             var pagenotfound = document.getElementById("page_not_found");
-            page_not_found.style.display = 'block';
+            pagenotfound.style.display = 'block';
 
             var trackingid = getAllUrlParams().track_id
             var e = document.getElementById("form_container");
             e.parentNode.removeChild(e);
         }
-
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch(function (error) {
-    console.log("Error getting document:", error);
-});
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+}
 
 window.onload = function() {
     var trackingid = getAllUrlParams().track_id
     if (trackingid === undefined || trackingid === null) {
         var e = document.getElementById("form_container");
         e.parentNode.removeChild(e);
+
+        console.log('no match');
+        var pagenotfound = document.getElementById("page_not_found");
+        pagenotfound.style.display = 'block';
     }
 }
