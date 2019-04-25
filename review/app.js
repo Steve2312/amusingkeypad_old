@@ -62,7 +62,6 @@ docRef.get().then(function (doc) {
             setTimeout(function () { fadeOutWaiting(); }, 2000);
             setTimeout(function () { found(); }, 3000);
             setTimeout(function () { redirect(); }, 5000);
-            redirect();
             
         }
 
