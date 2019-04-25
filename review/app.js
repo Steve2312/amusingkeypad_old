@@ -89,7 +89,7 @@ function found() {
 
 function redirect() {
     var track_id = getAllUrlParams().track_id
-    window.location.href = `../review/review_form?track_id=${track_id}`;
+    window.location.href = `../review/review_form/index.html?track_id=${track_id}`;
 }
 
 function notfound() {
