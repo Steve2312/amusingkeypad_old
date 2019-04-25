@@ -60,8 +60,8 @@ docRef.get().then(function (doc) {
 
         if (options.indexOf(choice) !== -1) {
             console.log('match');
-            var html = document.getElementById("check");
-            check.style.display = 'block';
+            var form_container = document.getElementById("form_container");
+            form_container.style.display = 'block';
 
         }
 
