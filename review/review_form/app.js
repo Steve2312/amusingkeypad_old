@@ -40,6 +40,7 @@ function getAllUrlParams(url) {
 
     return obj;
 }
+
 console.log(getAllUrlParams().track_id);
 
 firebase.initializeApp({
@@ -59,17 +60,19 @@ docRef.get().then(function (doc) {
 
         if (options.indexOf(choice) !== -1) {
             console.log('match');
-            setTimeout(function () { fadeOutWaiting(); }, 2000);
-            setTimeout(function () { found(); }, 3000);
-            setTimeout(function () { redirect(); }, 5000);
-            redirect();
-            
+            var html = document.getElementById("check");
+            check.style.display = 'block';
+
         }
 
         if (options.indexOf(choice) === -1) {
             console.log('no match');
-            setTimeout(function () { fadeOutWaiting(); }, 2000);
-            setTimeout(function () { notfound(); }, 3000);
+            var pagenotfound = document.getElementById("page_not_found");
+            page_not_found.style.display = 'block';
+
+            var trackingid = getAllUrlParams().track_id
+            var e = document.getElementById("form_container");
+            e.parentNode.removeChild(e);
         }
 
     } else {
@@ -78,32 +81,12 @@ docRef.get().then(function (doc) {
     }
 }).catch(function (error) {
     console.log("Error getting document:", error);
-    });
+});
 
-function found() {
-    var waiting = document.getElementById("waiting");
-    var found = document.getElementById("found");
-
-    waiting.style.display = 'none';
-    found.style.display = 'block';
-}
-
-function redirect() {
-    var track_id = getAllUrlParams().track_id
-    window.location.href = `../review/review_form?track_id=${track_id}`;
-}
-
-function notfound() {
-    var waiting = document.getElementById("waiting");
-    var notfound = document.getElementById("notfound");
-
-    waiting.style.display = 'none';
-    notfound.style.display = 'block';
-}
-
-function fadeOutWaiting() {
-    var waiting = document.getElementById("waiting");
-
-    waiting.classList.remove("fadeIn");
-    waiting.classList.add("fadeOut");
+window.onload = function() {
+    var trackingid = getAllUrlParams().track_id
+    if (trackingid === undefined || trackingid === null) {
+        var e = document.getElementById("form_container");
+        e.parentNode.removeChild(e);
+    }
 }
