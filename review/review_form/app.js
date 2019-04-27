@@ -42,22 +42,19 @@ function getAllUrlParams(url) {
 }
 
 console.log(getAllUrlParams().track_id);
+window.onload = function () {
 
-var track_id_from_url = getAllUrlParams().track_id;
+    var track_id_from_url = getAllUrlParams().track_id;
 
-if (track_id_from_url) {
-    firebase.initializeApp({
-        projectId: 'bothibiki-190909'
-    });
-    var db = firebase.firestore();
-    var docRef = db.collection("track_id").doc(track_id_from_url);
-    docRef.get().then(function(doc) {
-        if (doc.exists) {
+    if (track_id_from_url) {
+        const regex = /L\S\d{9}CN/g;
+        const str = getAllUrlParams().track_id;
+        if (str.toUpperCase().match(regex)) {
             console.log('match');
             var form_container = document.getElementById("form_container");
             form_container.style.display = 'block';
-        } 
-        if (!doc.exists) {
+        }
+        if (!str.toUpperCase().match(regex)) {
             console.log('no match');
             var pagenotfound = document.getElementById("page_not_found");
             pagenotfound.style.display = 'block';
@@ -66,12 +63,35 @@ if (track_id_from_url) {
             var e = document.getElementById("form_container");
             e.parentNode.removeChild(e);
         }
-    }).catch(function(error) {
-        console.log("Error getting document:", error);
-    });
-}
+    }
 
-window.onload = function() {
+    //If u want to get tracking numbers from database... not in use
+    if (track_id_from_url_NOT_IN_USE) {
+        firebase.initializeApp({
+            projectId: 'bothibiki-190909'
+        });
+        var db = firebase.firestore();
+        var docRef = db.collection("track_id").doc(track_id_from_url);
+        docRef.get().then(function (doc) {
+            if (doc.exists) {
+                console.log('match');
+                var form_container = document.getElementById("form_container");
+                form_container.style.display = 'block';
+            }
+            if (!doc.exists) {
+                console.log('no match');
+                var pagenotfound = document.getElementById("page_not_found");
+                pagenotfound.style.display = 'block';
+
+                var trackingid = getAllUrlParams().track_id
+                var e = document.getElementById("form_container");
+                e.parentNode.removeChild(e);
+            }
+        }).catch(function (error) {
+            console.log("Error getting document:", error);
+        });
+    }
+
     var trackingid = getAllUrlParams().track_id
     if (trackingid === undefined || trackingid === null) {
         var e = document.getElementById("form_container");

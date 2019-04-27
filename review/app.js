@@ -42,61 +42,121 @@ function getAllUrlParams(url) {
 }
 console.log(getAllUrlParams().track_id);
 
-var track_id_from_url = getAllUrlParams().track_id;
+window.onload = function () {
+    var track_id_from_url = getAllUrlParams().track_id;
 
 
-if (!track_id_from_url) {
-    console.log('no match');
-    setTimeout(function () { fadeOutWaiting(); }, 2000);
-    setTimeout(function () { notfound(); }, 3000);
-}
-if (track_id_from_url) {
-    firebase.initializeApp({
-        projectId: 'bothibiki-190909'
-    });
-    var db = firebase.firestore();
-    var docRef = db.collection("track_id").doc(track_id_from_url);
-    docRef.get().then(function(doc) {
-        if (doc.exists) {
-            console.log('match');
-            setTimeout(function () { fadeOutWaiting(); }, 2000);
-            setTimeout(function () { found(); }, 3000);
-            setTimeout(function () { redirect(); }, 5000);
-        } 
-        if (!doc.exists) {
+    if (!track_id_from_url) {
+        console.log('no match');
+        setTimeout(function () { fadeOutWaiting(); }, 2000);
+        setTimeout(function () { notfound(); }, 3000);
+    }
+
+    if (track_id_from_url) {
+        const regex = /L\S\d{9}CN/g;
+        const str = getAllUrlParams().track_id;
+
+        if (str.toUpperCase().match(regex)) {
+            var track_id_from_url = getAllUrlParams().track_id;
+
+            firebase.initializeApp({
+                projectId: 'bothibiki-190909'
+            });
+
+            var db = firebase.firestore();
+            var trackdb = db.collection("used_track_ids").doc(track_id_from_url.toUpperCase());
+            trackdb.get().then(function (doc) {
+                if (doc.exists) {
+                    console.log("Already filled it in");
+                    setTimeout(function () { fadeOutWaiting(); }, 2000);
+                    setTimeout(function () { already_filled(); }, 3000);
+                }
+
+                if (!doc.exists) {
+                    console.log('Not filled in');
+                    setTimeout(function () { fadeOutWaiting(); }, 2000);
+                    setTimeout(function () { found(); }, 3000);
+                    setTimeout(function () { redirect(); }, 5000);
+                }
+            });
+        }
+        if (!str.toUpperCase().match(regex)) {
             console.log('no match');
             setTimeout(function () { fadeOutWaiting(); }, 2000);
             setTimeout(function () { notfound(); }, 3000);
         }
-    }).catch(function(error) {
-        console.log("Error getting document:", error);
+    }
+
+    function found() {
+        var waiting = document.getElementById("waiting");
+        var found = document.getElementById("found");
+
+        waiting.style.display = 'none';
+        found.style.display = 'block';
+    }
+
+    function already_filled() {
+        var waiting = document.getElementById("waiting");
+        var already_filled = document.getElementById("already_filled");
+
+        waiting.style.display = 'none';
+        already_filled.style.display = 'block';
+    }
+
+    function redirect() {
+        var track_id = getAllUrlParams().track_id
+        window.location.href = `../review/review_form/index.html?track_id=${track_id.toUpperCase()}`;
+    }
+
+    function notfound() {
+        var waiting = document.getElementById("waiting");
+        var notfound = document.getElementById("notfound");
+
+        waiting.style.display = 'none';
+        notfound.style.display = 'block';
+    }
+
+    function fadeOutWaiting() {
+        var waiting = document.getElementById("waiting");
+
+        waiting.classList.remove("fadeIn");
+        waiting.classList.add("fadeOut");
+    }
+}
+
+
+function addToArray() {
+    var track_id_from_url = getAllUrlParams().track_id;
+
+    firebase.initializeApp({
+        projectId: 'bothibiki-190909'
+    });
+
+    var db = firebase.firestore();
+    var docRef = db.collection("used_track_ids");
+
+    // Atomically add a new region to the "regions" array field.
+    docRef.doc("track_id_from_url").set({
+        form: "true",
     });
 }
 
-function found() {
-    var waiting = document.getElementById("waiting");
-    var found = document.getElementById("found");
+function checkarray() {
+    var track_id_from_url = getAllUrlParams().track_id;
 
-    waiting.style.display = 'none';
-    found.style.display = 'block';
-}
+    firebase.initializeApp({
+        projectId: 'bothibiki-190909'
+    });
 
-function redirect() {
-    var track_id = getAllUrlParams().track_id
-    window.location.href = `../review/review_form/index.html?track_id=${track_id}`;
-}
+    var db = firebase.firestore();
+    var trackdb = db.collection("used_track_ids").doc(track_id_from_url.toUpperCase());
+    trackdb.get().then(function (doc) {
+        if (doc.exists) {
+            console.log("exists");
+        }
 
-function notfound() {
-    var waiting = document.getElementById("waiting");
-    var notfound = document.getElementById("notfound");
-
-    waiting.style.display = 'none';
-    notfound.style.display = 'block';
-}
-
-function fadeOutWaiting() {
-    var waiting = document.getElementById("waiting");
-
-    waiting.classList.remove("fadeIn");
-    waiting.classList.add("fadeOut");
+        if (!doc.exists) {
+            console.log("doesnt exists");
+        }
+    });
 }
