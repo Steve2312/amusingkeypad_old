@@ -125,7 +125,7 @@ window.onload = function () {
 }
 
 
-function addToArray() {
+function addTrackID() {
     var track_id_from_url = getAllUrlParams().track_id;
 
     firebase.initializeApp({
