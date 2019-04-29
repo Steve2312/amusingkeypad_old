@@ -41,6 +41,10 @@ function getAllUrlParams(url) {
     return obj;
 }
 
+firebase.initializeApp({
+    projectId: 'bothibiki-190909'
+});
+
 console.log(getAllUrlParams().track_id);
 window.onload = function () {
 
@@ -52,10 +56,6 @@ window.onload = function () {
 
         if (str.toUpperCase().match(regex)) {
             var track_id_from_url = getAllUrlParams().track_id;
-
-            firebase.initializeApp({
-                projectId: 'bothibiki-190909'
-            });
 
             var db = firebase.firestore();
             var trackdb = db.collection("used_track_ids").doc(track_id_from_url.toUpperCase());
@@ -88,5 +88,77 @@ window.onload = function () {
         console.log('no match');
         var pagenotfound = document.getElementById("page_not_found");
         pagenotfound.style.display = 'block';
+    }
+}
+
+function getDataForm() {
+    var name = document.getElementById("form_name");
+    var rating = document.getElementById("form_rating");
+    var issues = document.getElementById("form_issues");
+    var thoughts = document.getElementById("form_thoughts");
+
+    var data_name = name.value;
+    var data_rating = rating.value;
+    var data_issues = issues.value;
+    var data_thoughts = thoughts.value;
+
+    if (data_name == "") {
+        name.style.border = "1px solid red"; 
+    }
+
+    if (!data_name == "") {
+        if (data_rating == "Select rating") {
+            rating.style.border = "1px solid red";
+        }
+
+        else {
+            var track_id_from_url = getAllUrlParams().track_id;
+
+            var db = firebase.firestore();
+            var docReview = db.collection("reviews");
+            var docUsed = db.collection("used_track_ids");
+
+            var docReviewData = {
+                objectExample: {
+                    name: data_name,
+                    rating: data_rating,
+                    issues: data_issues,
+                    thoughts: data_thoughts
+                }
+            };
+
+            var docUsedData = {
+                objectExample: {
+                    form: "true"
+                }
+            };
+
+            submitToDB();
+
+            function submitToDB() {
+                docReview.doc(track_id_from_url.toUpperCase()).set(docReviewData);
+                docUsed.doc(track_id_from_url.toUpperCase()).set(docUsedData);
+                setTimeout(function () { fadeOutForm(); }, 10);
+                setTimeout(function () { hideForm(); }, 1000);
+                setTimeout(function () { showThanks(); }, 2000);
+            }
+
+            function fadeOutForm() {
+                var form_container = document.getElementById("form_container");
+
+                form_container.classList.remove("fadeIn");
+                form_container.classList.add("fadeOut");
+            }
+
+            function hideForm() {
+                var form_container = document.getElementById("form_container");
+                form_container.style.display = 'none';
+            }
+
+            function showThanks() {
+                var thanks_form = document.getElementById("thanks_form");
+                thanks_form.style.display = 'block';
+            }
+        }
     }
 }

@@ -42,6 +42,10 @@ function getAllUrlParams(url) {
 }
 console.log(getAllUrlParams().track_id);
 
+firebase.initializeApp({
+    projectId: 'bothibiki-190909'
+});
+
 window.onload = function () {
     var track_id_from_url = getAllUrlParams().track_id;
 
@@ -58,10 +62,6 @@ window.onload = function () {
 
         if (str.toUpperCase().match(regex)) {
             var track_id_from_url = getAllUrlParams().track_id;
-
-            firebase.initializeApp({
-                projectId: 'bothibiki-190909'
-            });
 
             var db = firebase.firestore();
             var trackdb = db.collection("used_track_ids").doc(track_id_from_url.toUpperCase());
@@ -122,41 +122,4 @@ window.onload = function () {
         waiting.classList.remove("fadeIn");
         waiting.classList.add("fadeOut");
     }
-}
-
-
-function addTrackID() {
-    var track_id_from_url = getAllUrlParams().track_id;
-
-    firebase.initializeApp({
-        projectId: 'bothibiki-190909'
-    });
-
-    var db = firebase.firestore();
-    var docRef = db.collection("used_track_ids");
-
-    // Atomically add a new region to the "regions" array field.
-    docRef.doc("track_id_from_url").set({
-        form: "true",
-    });
-}
-
-function checkarray() {
-    var track_id_from_url = getAllUrlParams().track_id;
-
-    firebase.initializeApp({
-        projectId: 'bothibiki-190909'
-    });
-
-    var db = firebase.firestore();
-    var trackdb = db.collection("used_track_ids").doc(track_id_from_url.toUpperCase());
-    trackdb.get().then(function (doc) {
-        if (doc.exists) {
-            console.log("exists");
-        }
-
-        if (!doc.exists) {
-            console.log("doesnt exists");
-        }
-    });
 }

@@ -76,19 +76,21 @@
             <div class="col-md-12 animated2 fadeIn" style="display:block;">
                 <h2>Antecer's <a id="gradient">AmusingKeypad</a> Pro Review</h2>
                 <p style="margin-left: 10px;">Your opinion is very precious to us, so every opinion counts.</p>
+                <p style="margin-left: 10px;">* = Required</p>
             </div>
         </div>
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-12 animated2 fadeIn" style="display:block;">
                 <form>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Name</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+                        <label for="form_name">Name*</label>
+                        <input type="text" class="form-control" id="form_name" placeholder="Name">
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Overal rating from 1 to 5</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <label for="form_rating">Overal rating from 1 to 5*</label>
+                        <select class="form-control" id="form_rating">
+                            <option>Select rating</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -98,18 +100,17 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Issues (optional)</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="form_issues">Issues (optional)</label>
+                        <textarea class="form-control" id="form_issues" rows="3"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Thoughts about the keypad (optional)</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="form_thoughts">Thoughts about the keypad (optional)</label>
+                        <textarea class="form-control" id="form_thoughts" rows="3"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <input id="tracker_button" onclick="" type="button" value="Submit form">
-                        <p style="margin-top: 10px;">Disclaimer: Submit does not work yet!</p>
+                        <input id="tracker_button" onclick="getDataForm()" type="button" value="Submit form">
                     </div>
                 </form>
             </div>
