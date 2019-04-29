@@ -104,6 +104,10 @@ function getDataForm() {
 
     if (data_name == "") {
         name.style.border = "1px solid red"; 
+
+        if (data_rating == "Select rating") {
+            rating.style.border = "1px solid red";
+        }
     }
 
     if (!data_name == "") {
