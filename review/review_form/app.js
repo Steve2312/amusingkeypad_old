@@ -64,6 +64,8 @@ window.onload = function () {
                     console.log("Already filled it in");
                     var thanks_form = document.getElementById("thanks_form");
                     thanks_form.style.display = 'block';
+                    var e = document.getElementById("form_container");
+                    e.parentNode.removeChild(e);
                 }
 
                 if (!doc.exists) {
@@ -77,6 +79,8 @@ window.onload = function () {
             console.log('no match');
             var pagenotfound = document.getElementById("page_not_found");
             pagenotfound.style.display = 'block';
+            var e = document.getElementById("form_container");
+            e.parentNode.removeChild(e);
         }
     }
 
