@@ -116,53 +116,69 @@ function getDataForm() {
         }
 
         else {
+
+            const regex = /L\S\d{9}CN/g;
+            const str = getAllUrlParams().track_id;
             var track_id_from_url = getAllUrlParams().track_id;
 
-            var db = firebase.firestore();
-            var docReview = db.collection("reviews");
-            var docUsed = db.collection("used_track_ids");
+            if (str.toUpperCase().match(regex)) {
+                var db = firebase.firestore();
+                var trackdb = db.collection("used_track_ids").doc(track_id_from_url.toUpperCase());
+                trackdb.get().then(function (doc) {
+                    if (doc.exists) {
+                        return alert("Track ID already used");
+                    }
 
-            var docReviewData = {
-                objectExample: {
-                    name: data_name,
-                    rating: data_rating,
-                    issues: data_issues,
-                    thoughts: data_thoughts
-                }
-            };
+                    if (!doc.exists) {
 
-            var docUsedData = {
-                objectExample: {
-                    form: "true"
-                }
-            };
+                        var db = firebase.firestore();
+                        var docReview = db.collection("reviews");
+                        var docUsed = db.collection("used_track_ids");
 
-            submitToDB();
+                        var docReviewData = {
+                            name: data_name,
+                            rating: data_rating,
+                            issues: data_issues,
+                            thoughts: data_thoughts
+                        };
 
-            function submitToDB() {
-                docReview.doc(track_id_from_url.toUpperCase()).set(docReviewData);
-                docUsed.doc(track_id_from_url.toUpperCase()).set(docUsedData);
-                setTimeout(function () { fadeOutForm(); }, 10);
-                setTimeout(function () { hideForm(); }, 1000);
-                setTimeout(function () { showThanks(); }, 2000);
+                        var docUsedData = {
+                            form: "true"
+                        };
+
+                        submitToDB();
+
+                        function submitToDB() {
+                            docReview.doc(track_id_from_url.toUpperCase()).set(docReviewData);
+                            docUsed.doc(track_id_from_url.toUpperCase()).set(docUsedData);
+                            setTimeout(function () { fadeOutForm(); }, 10);
+                            setTimeout(function () { hideForm(); }, 1000);
+                            setTimeout(function () { showThanks(); }, 2000);
+                        }
+
+                        function fadeOutForm() {
+                            var form_container = document.getElementById("form_container");
+
+                            form_container.classList.remove("fadeIn");
+                            form_container.classList.add("fadeOut");
+                        }
+
+                        function hideForm() {
+                            var form_container = document.getElementById("form_container");
+                            form_container.style.display = 'none';
+                        }
+
+                        function showThanks() {
+                            var thanks_form = document.getElementById("thanks_form");
+                            thanks_form.style.display = 'block';
+                        }
+                    }
+                });
             }
-
-            function fadeOutForm() {
-                var form_container = document.getElementById("form_container");
-
-                form_container.classList.remove("fadeIn");
-                form_container.classList.add("fadeOut");
+            if (!str.toUpperCase().match(regex)) {
+                return alert("Error Submitting Form");
             }
-
-            function hideForm() {
-                var form_container = document.getElementById("form_container");
-                form_container.style.display = 'none';
-            }
-
-            function showThanks() {
-                var thanks_form = document.getElementById("thanks_form");
-                thanks_form.style.display = 'block';
-            }
+            
         }
     }
 }
