@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-window.onscroll = function () { myFunction() };
+    window.onscroll = function () { myFunction(); };
 
     var navbar = document.getElementById("navbar");
     var navbar2 = document.getElementById("navbar2");
@@ -28,9 +28,15 @@ window.onscroll = function () { myFunction() };
     }
 });
 
+window.onload = function () {
+    particlesJS.load('particles-js', 'script/particle/setting.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+};
+
 function submit() {
     var tarckAPI = "https://t.17track.net#nums=";
-    var input = document.getElementById('tracking_number').value
+    var input = document.getElementById('tracking_number').value();
 
     if (!input) {
         return alert("Please provide a tracking number!");
