@@ -13,10 +13,10 @@ body {
 
 .banner-nav-img {
     /* The image used */
-    background-image: linear-gradient(#000000, transparent, #000000), url("../images/3.jpg");
+    background-image: linear-gradient(#000000, transparent, #000000), url("../images/5.jpg");
     /* Set a specific height */
     margin-top: 40px;
-    height: 50vw;
+    height: 100%;
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
@@ -25,10 +25,18 @@ body {
     z-index: 1;
 }
 
+.scrolldownarrow {
+    position: absolute;
+    transform: translateX(-50%) translateY(-200%);
+    bottom: 0;
+    left: 50%;
+    font-size: 30px;
+}
+
 #particles-js {
     position: absolute;
-    height: 330px;
-    min-width: 100%;
+    height: 340px;
+    min-width: 100% !important;
     opacity: 0.8;
     white-space: nowrap;
 }
