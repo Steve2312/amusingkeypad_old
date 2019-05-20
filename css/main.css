@@ -321,7 +321,7 @@ a:hover{
 
 #particles-js {
     position: absolute;
-    height: 340px;
+    height: 356px;
     min-width: 100% !important;
     opacity: 0.8;
     white-space: nowrap;
@@ -336,19 +336,27 @@ a:hover{
     margin-top: 110px;
 }
 
-@media only screen and (max-width: 991px) {
-    .downloaddriver {
-        transform: scale(0.8);
-        margin-top: 100px;
-    }
-}
-
 .navigation {
     display: block;
 }
 
 .dropnavigation {
     display: none;
+}
+
+@media only screen and (max-width: 991px) {
+    .downloaddriver {
+        transform: scale(0.8);
+        margin-top: 100px;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .dropnavigation {
+        display: inline-flex;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -362,12 +370,8 @@ a:hover{
         margin-top: 10px;
     }
 
-    .navigation {
-        display: none;
-    }
-
-    .dropnavigation {
-        display: inline-flex;
+    #particles-js {
+        height: 523px;
     }
 }
 
@@ -487,4 +491,32 @@ a:hover{
 }
 .productcolum img {
     border-radius: 20px 20px 0px 0px;
+}
+
+.hovertext {
+    position: absolute;
+    z-index: 1;
+    margin-top: 30px;
+    background-color: rgba(255,255,255, 0.1) !important;
+    border-radius: 5px;
+    padding: 10px;
+    visibility:hidden;
+}
+
+#flag:hover ~ .hovertext {
+    visibility: visible;
+}
+
+.hovertext2 {
+    position: absolute;
+    z-index: 1;
+    margin-top: 30px;
+    background-color: rgba(255,255,255, 0.1) !important;
+    border-radius: 5px;
+    padding: 10px;
+    visibility: hidden;
+}
+
+#flag2:hover ~ .hovertext2 {
+    visibility: visible;
 }

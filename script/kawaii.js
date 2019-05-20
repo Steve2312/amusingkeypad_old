@@ -325,13 +325,11 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     var flag = document.getElementById("flag");
+    var flag2 = document.getElementById("flag2");
     if (getAllUrlParams().country) {
         var country = getAllUrlParams().country.toLowerCase();
-        flag.src = `../../flags/${country}.png`;
-    }
-
-    if (!getAllUrlParams().country) {
-        flag.src = `gl.png`;
+        flag.src = `https://steve2312.github.io/flags/${country}.png`;
+        flag2.src = `https://steve2312.github.io/flags/${country}.png`;
     }
 });
 
