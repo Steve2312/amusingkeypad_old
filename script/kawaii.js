@@ -323,4 +323,16 @@ $(document).ready(function () {
     }
 });
 
+$(document).ready(function () {
+    var flag = document.getElementById("flag");
+    if (getAllUrlParams().country) {
+        var country = getAllUrlParams().country.toLowerCase();
+        flag.src = `../../flags/${country}.png`;
+    }
+
+    if (!getAllUrlParams().country) {
+        flag.src = `gl.png`;
+    }
+});
+
 
