@@ -155,7 +155,7 @@ window.onload = function () {
 
 function submit() {
     var tarckAPI = "https://t.17track.net#nums=";
-    var input = document.getElementById('tracking_number').value();
+    var input = document.getElementById('tracking_number').value;
 
     if (!input) {
         return alert("Please provide a tracking number!");
