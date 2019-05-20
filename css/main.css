@@ -33,14 +33,6 @@ body {
     font-size: 30px;
 }
 
-#particles-js {
-    position: absolute;
-    height: 340px;
-    min-width: 100% !important;
-    opacity: 0.8;
-    white-space: nowrap;
-}
-
 hr {
     width: 100%;
     opacity: 0.5;
@@ -327,6 +319,13 @@ a:hover{
     }
 }
 
+#particles-js {
+    position: absolute;
+    height: 340px;
+    min-width: 100% !important;
+    opacity: 0.8;
+    white-space: nowrap;
+}
 /*Driver Support*/
 .downloaddriver {
     transform: scale(1);
