@@ -331,6 +331,26 @@ $(document).ready(function () {
         flag.src = `https://steve2312.github.io/flags/${country}.png`;
         flag2.src = `https://steve2312.github.io/flags/${country}.png`;
     }
+
+    $("#flag").click(function () {
+        $('html,body').animate({
+            scrollTop: $(".changecountryhr").offset().top
+        },
+            'slow');
+    });
+
+    $("#flag2").click(function () {
+        $('html,body').animate({
+            scrollTop: $(".changecountryhr").offset().top
+        },
+            'slow');
+    });
 });
+
+function changeCountryTo(text) {
+    var url2 = window.location.pathname;
+    console.log(url2);
+    window.location.replace(url2 + `?country=${text}`);
+}
 
 
