@@ -147,7 +147,7 @@ window.onload = function () {
 
     $(".scrolldown").click(function () {
         $('html,body').animate({
-            scrollTop: $(".scrolldownarrow").offset().top
+            scrollTop: $("#particles-js").offset().top
         },
         'slow');
     });
