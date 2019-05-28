@@ -353,4 +353,30 @@ function changeCountryTo(text) {
     window.location.replace(url2 + `?country=${text}`);
 }
 
+$(document).ready(function () {
+    var lastQuote = 0;
+
+    function changeQuote() {
+        var quotes = [
+            "Amusing Device",
+            "Antecer",
+            "Amusing Keypad"
+        ];
+        do {
+            var rq = Math.floor(Math.random() * quotes.length);
+        } while (rq === lastQuote);
+        lastQuote = rq;
+        var rQuote = quotes[rq];
+        
+        document.getElementById("rQuote").style.opacity = 0;
+
+        setTimeout(function () {
+            document.getElementById("rQuote").innerHTML = rQuote;
+            document.getElementById("rQuote").style.opacity = 1;
+        }, 1000);
+    }
+
+    setInterval(changeQuote, 7000);
+});
+
 
