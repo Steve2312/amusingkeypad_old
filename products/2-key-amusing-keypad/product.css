@@ -46,12 +46,11 @@
         font-size: 7vw;
     }
 }
-/*==============DoNE=============*/
+
 .containerslider {
     position: relative;
 }
 
-/* Hide the images by default */
 .mySlides {
     display: none;
 }
@@ -105,7 +104,6 @@
     position: absolute;
     top: 0;
 }
-/*=============^DoNE^============*/
 
 .caption-container {
     text-align: center;
