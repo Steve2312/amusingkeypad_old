@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:800&display=swap');
+
 .banner-product-img {
     /* The image used */
     background-image: linear-gradient(#000000, transparent, #000000), url("../../images/5.jpg");
@@ -174,3 +176,164 @@
     .demo:hover {
         opacity: 1;
     }
+
+#addtocart {
+    background-color: #ffc439;
+    color: #111;
+    height: 50px;
+    width: 300px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+    #addtocart:hover {
+        background-color: #eab435;
+    }
+
+    #addtocart img {
+        margin-top: 11px;
+        height: 25px;
+    }
+
+#wrapperbuy {
+    width: 280px;
+    height: auto;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-top: 20px;
+}
+
+#buynow {
+    background-color: #0083ff;
+    color: white;
+    height: 50px;
+    width: 130px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+    #buynow a {
+        line-height: 50px;
+        text-align: center;
+        font-family: 'Heebo', sans-serif !important;
+    }
+    #buynow:hover {
+        background-color: #005eb7;
+    }
+
+.inputcss {
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #050505;
+    color: white;
+}
+
+.inputcolorcss {
+    width: 150px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #050505;
+    color: white;
+}
+
+.inputtextcss {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #050505;
+    color: white;
+    resize: none;
+}
+
+#aliexpress {
+    background-color: #ff1111;
+    color: #111;
+    height: 50px;
+    width: 300px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+    #aliexpress:hover {
+        background-color: #d81313;
+    }
+
+    #aliexpress img {
+        margin-top: 15px;
+        height: 22px;
+    }
+
+#ebay {
+    background-color: #ffffff;
+    color: #111;
+    height: 50px;
+    width: 300px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+    #ebay:hover {
+        background-color: #efefef;
+    }
+
+    #ebay img {
+        margin-top: 12px;
+        height: 25px;
+    }
+
+#taobao {
+    background-color: #ff5230;
+    color: #111;
+    height: 50px;
+    width: 300px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+    #taobao:hover {
+        background-color: #d84427;
+    }
+
+    #taobao img {
+        margin-top: 12px;
+        height: 25px;
+    }
+
+.packagetype {
+    display: inline-block;
+}
+    .packagetype label {
+        border: 2px solid rgba(0, 0, 0, 0);
+        border-bottom: 2px solid rgba(255,255,255, 0.2);
+        padding: 10px;
+        margin: 4px;
+    }
+
+        .packagetype label:hover {
+            border-bottom: 2px solid rgba(255,255,255, 0.7);
+        }
+
+.checked {
+    border: 2px solid rgba(255,255,255,1) !important;
+}
+
+.colortype {
+    display: inline-block;
+}
+
+    .colortype label {
+        border: 2px solid rgba(0, 0, 0, 0);
+        border-bottom: 2px solid rgba(255,255,255, 0.2);
+        padding: 10px;
+        margin: 3px;
+    }
+
+        .colortype label:hover {
+            border-bottom: 2px solid rgba(255,255,255, 0.7);
+        }
