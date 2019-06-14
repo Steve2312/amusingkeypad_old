@@ -42,3 +42,11 @@ function getAllUrlParams(url) {
 }
 
 console.log(getAllUrlParams().track_id);
+
+$(document).ready(function () {
+
+    document.getElementById("addtocart").addEventListener('click', function () {
+        document.getElementById("shopping").submit();
+    });
+
+});
