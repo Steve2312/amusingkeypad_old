@@ -41,7 +41,9 @@ function getAllUrlParams(url) {
     return obj;
 }
 
-console.log(getAllUrlParams().track_id);
+console.log(getAllUrlParams().country);
+console.log(getAllUrlParams().packagetype);
+console.log(getAllUrlParams().color);
 
 $(document).ready(function () {
 
