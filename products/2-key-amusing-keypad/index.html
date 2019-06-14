@@ -161,32 +161,30 @@
                         <p style="text-align: left;"> • Price: <a id="price" style="font-family: 'Noto Sans', sans-serif !important;"></a></p>
 
                         <hr style="margin-bottom: 20px;" />
-                        <form id="2kbuyform" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" style="margin-top: 20px;">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="SZEEMV8NGW67W">
+                        <form style="margin-top: 20px;">
 
-                            <p style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important;"> Package Type </p>
+                            <p id="packagetypetext" style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important;"> Package Type </p>
                             <table style="margin-right:auto; width: 100%;">
                                 <tr><td><input type="hidden" name="on0" value="Package Type"></td></tr>
                                 <tr>
                                     <td>
                                         <div class="packagetype" style="text-align: left !important; margin-bottom: 20px;">
-                                            <input style="display:none;" id="Cherry-Red" type="checkbox" name="os0" value="Cherry-Red" />
+                                            <input class="packagetype" style="display:none;" id="Cherry-Red" type="checkbox" name="os0" value="Cherry-Red" />
                                             <label id="LabelCherry-Red" for="Cherry-Red">Cherry-Red</label>
 
-                                            <input style="display:none;" id="Cherry-Brown" type="checkbox" name="os0" value="Cherry-Brown" />
+                                            <input class="packagetype" style="display:none;" id="Cherry-Brown" type="checkbox" name="os0" value="Cherry-Brown" />
                                             <label id="LabelCherry-Brown" for="Cherry-Brown">Cherry-Brown</label>
 
-                                            <input style="display:none;" id="Cherry-Cyan" type="checkbox" name="os0" value="Cherry-Cyan" />
+                                            <input class="packagetype" style="display:none;" id="Cherry-Cyan" type="checkbox" name="os0" value="Cherry-Cyan" />
                                             <label id="LabelCherry-Cyan" for="Cherry-Cyan">Cherry-Cyan</label>
 
-                                            <input style="display:none;" id="Cherry-Black" type="checkbox" name="os0" value="Cherry-Black" />
+                                            <input class="packagetype" style="display:none;" id="Cherry-Black" type="checkbox" name="os0" value="Cherry-Black" />
                                             <label id="LabelCherry-Black" for="Cherry-Black">Cherry-Black</label>
 
-                                            <input style="display:none;" id="Cherry-Silver" type="checkbox" name="os0" value="Cherry-Silver" />
+                                            <input class="packagetype" style="display:none;" id="Cherry-Silver" type="checkbox" name="os0" value="Cherry-Silver" />
                                             <label id="LabelCherry-Silver" for="Cherry-Silver">Cherry-Silver</label>
 
-                                            <input style="display:none;" id="Cherry-All" type="checkbox" name="os0" value="Cherry-All" />
+                                            <input class="packagetype" style="display:none;" id="Cherry-All" type="checkbox" name="os0" value="Cherry-All" />
                                             <label id="LabelCherry-All" for="Cherry-All">Cherry-All</label>
                                         </div>
                                         <!--Only Select One-->
@@ -252,16 +250,16 @@
                                 </tr>
                             </table>
 
-                            <p style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important;"> Color </p>
+                            <p id="colortext" style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important;"> Color </p>
                             <table style="margin-right:auto;">
                                 <tr><td><input type="hidden" name="on1" value="Color"></td></tr>
                                 <tr>
                                     <td>
                                         <div class="colortype">
-                                            <input style="display:none;" id="BlackColor" type="checkbox" name="os1" value="Black" />
+                                            <input class="color" style="display:none;" id="BlackColor" type="checkbox" name="os1" value="Black" />
                                             <label id="LabelBlack" for="BlackColor">Black</label>
 
-                                            <input style="display:none;" id="SilverColor" type="checkbox" name="os1" value="Silver" />
+                                            <input class="color" style="display:none;" id="SilverColor" type="checkbox" name="os1" value="Silver" />
                                             <label id="LabelSilver" for="SilverColor">Silver</label>
                                         </div>
 
@@ -298,13 +296,13 @@
                                     </td>
                                 </tr>
                             </table>
-
-                            <p style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important; margin-top: 10px;"> Leave a message </p>
-                            <table style="margin-right:auto; width: 100%;">
-                                <tr><td><input type="hidden" name="on2" value="Leave message"></td></tr>
-                                <tr><td><textarea rows="4" cols="4" type="text" name="os2" maxlength="200" class="inputtextcss"></textarea></td></tr>
-                            </table>
-
+                            <!--
+    <p style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important; margin-top: 10px;"> Leave a message </p>
+    <table style="margin-right:auto; width: 100%;">
+        <tr><td><input type="hidden" name="on2" value="Leave message"></td></tr>
+        <tr><td><textarea rows="4" cols="4" type="text" name="os2" maxlength="200" class="inputtextcss"></textarea></td></tr>
+    </table>
+        -->
                         </form>
                         <p style="margin-bottom: 0px; margin-top: 20px;">Proceed to check out with :</p>
                         <div class="cursor" id="addtocart" style="margin-left:auto; margin-right:auto;"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAyNCAzMiIgeG1sbnM9Imh0dHA6JiN4MkY7JiN4MkY7d3d3LnczLm9yZyYjeDJGOzIwMDAmI3gyRjtzdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiPjxwYXRoIGZpbGw9IiMwMDljZGUiIGQ9Ik0gMjAuOTA1IDkuNSBDIDIxLjE4NSA3LjQgMjAuOTA1IDYgMTkuNzgyIDQuNyBDIDE4LjU2NCAzLjMgMTYuNDExIDIuNiAxMy42OTcgMi42IEwgNS43MzkgMi42IEMgNS4yNzEgMi42IDQuNzEgMy4xIDQuNjE1IDMuNiBMIDEuMzM5IDI1LjggQyAxLjMzOSAyNi4yIDEuNjIgMjYuNyAyLjA4OCAyNi43IEwgNi45NTYgMjYuNyBMIDYuNjc1IDI4LjkgQyA2LjU4MSAyOS4zIDYuODYyIDI5LjYgNy4yMzYgMjkuNiBMIDExLjM1NiAyOS42IEMgMTEuODI1IDI5LjYgMTIuMjkyIDI5LjMgMTIuMzg2IDI4LjggTCAxMi4zODYgMjguNSBMIDEzLjIyOCAyMy4zIEwgMTMuMjI4IDIzLjEgQyAxMy4zMjIgMjIuNiAxMy43OSAyMi4yIDE0LjI1OCAyMi4yIEwgMTQuODIxIDIyLjIgQyAxOC44NDUgMjIuMiAyMS45MzUgMjAuNSAyMi44NzEgMTUuNSBDIDIzLjMzOSAxMy40IDIzLjE1MyAxMS43IDIyLjAyOSAxMC41IEMgMjEuNzQ4IDEwLjEgMjEuMjc5IDkuOCAyMC45MDUgOS41IEwgMjAuOTA1IDkuNSI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMTIxNjkiIGQ9Ik0gMjAuOTA1IDkuNSBDIDIxLjE4NSA3LjQgMjAuOTA1IDYgMTkuNzgyIDQuNyBDIDE4LjU2NCAzLjMgMTYuNDExIDIuNiAxMy42OTcgMi42IEwgNS43MzkgMi42IEMgNS4yNzEgMi42IDQuNzEgMy4xIDQuNjE1IDMuNiBMIDEuMzM5IDI1LjggQyAxLjMzOSAyNi4yIDEuNjIgMjYuNyAyLjA4OCAyNi43IEwgNi45NTYgMjYuNyBMIDguMjY3IDE4LjQgTCA4LjE3MyAxOC43IEMgOC4yNjcgMTguMSA4LjczNSAxNy43IDkuMjk2IDE3LjcgTCAxMS42MzYgMTcuNyBDIDE2LjIyNCAxNy43IDE5Ljc4MiAxNS43IDIwLjkwNSAxMC4xIEMgMjAuODEyIDkuOCAyMC45MDUgOS43IDIwLjkwNSA5LjUiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDAzMDg3IiBkPSJNIDkuNDg1IDkuNSBDIDkuNTc3IDkuMiA5Ljc2NSA4LjkgMTAuMDQ2IDguNyBDIDEwLjIzMiA4LjcgMTAuMzI2IDguNiAxMC41MTMgOC42IEwgMTYuNjkyIDguNiBDIDE3LjQ0MiA4LjYgMTguMTg5IDguNyAxOC43NTMgOC44IEMgMTguOTM5IDguOCAxOS4xMjcgOC44IDE5LjMxNCA4LjkgQyAxOS41MDEgOSAxOS42ODggOSAxOS43ODIgOS4xIEMgMTkuODc1IDkuMSAxOS45NjggOS4xIDIwLjA2MyA5LjEgQyAyMC4zNDMgOS4yIDIwLjYyNCA5LjQgMjAuOTA1IDkuNSBDIDIxLjE4NSA3LjQgMjAuOTA1IDYgMTkuNzgyIDQuNiBDIDE4LjY1OCAzLjIgMTYuNTA2IDIuNiAxMy43OSAyLjYgTCA1LjczOSAyLjYgQyA1LjI3MSAyLjYgNC43MSAzIDQuNjE1IDMuNiBMIDEuMzM5IDI1LjggQyAxLjMzOSAyNi4yIDEuNjIgMjYuNyAyLjA4OCAyNi43IEwgNi45NTYgMjYuNyBMIDguMjY3IDE4LjQgTCA5LjQ4NSA5LjUgWiI+PC9wYXRoPjwvc3ZnPg==" alt="PP" class="paypal-logo paypal-logo-pp paypal-logo-color-blue" style="visibility: visible;"> <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMTAwIDMyIiB4bWxucz0iaHR0cDomI3gyRjsmI3gyRjt3d3cudzMub3JnJiN4MkY7MjAwMCYjeDJGO3N2ZyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pbllNaW4gbWVldCI+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAxMiA0LjkxNyBMIDQuMiA0LjkxNyBDIDMuNyA0LjkxNyAzLjIgNS4zMTcgMy4xIDUuODE3IEwgMCAyNS44MTcgQyAtMC4xIDI2LjIxNyAwLjIgMjYuNTE3IDAuNiAyNi41MTcgTCA0LjMgMjYuNTE3IEMgNC44IDI2LjUxNyA1LjMgMjYuMTE3IDUuNCAyNS42MTcgTCA2LjIgMjAuMjE3IEMgNi4zIDE5LjcxNyA2LjcgMTkuMzE3IDcuMyAxOS4zMTcgTCA5LjggMTkuMzE3IEMgMTQuOSAxOS4zMTcgMTcuOSAxNi44MTcgMTguNyAxMS45MTcgQyAxOSA5LjgxNyAxOC43IDguMTE3IDE3LjcgNi45MTcgQyAxNi42IDUuNjE3IDE0LjYgNC45MTcgMTIgNC45MTcgWiBNIDEyLjkgMTIuMjE3IEMgMTIuNSAxNS4wMTcgMTAuMyAxNS4wMTcgOC4zIDE1LjAxNyBMIDcuMSAxNS4wMTcgTCA3LjkgOS44MTcgQyA3LjkgOS41MTcgOC4yIDkuMzE3IDguNSA5LjMxNyBMIDkgOS4zMTcgQyAxMC40IDkuMzE3IDExLjcgOS4zMTcgMTIuNCAxMC4xMTcgQyAxMi45IDEwLjUxNyAxMy4xIDExLjIxNyAxMi45IDEyLjIxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAzNS4yIDEyLjExNyBMIDMxLjUgMTIuMTE3IEMgMzEuMiAxMi4xMTcgMzAuOSAxMi4zMTcgMzAuOSAxMi42MTcgTCAzMC43IDEzLjYxNyBMIDMwLjQgMTMuMjE3IEMgMjkuNiAxMi4wMTcgMjcuOCAxMS42MTcgMjYgMTEuNjE3IEMgMjEuOSAxMS42MTcgMTguNCAxNC43MTcgMTcuNyAxOS4xMTcgQyAxNy4zIDIxLjMxNyAxNy44IDIzLjQxNyAxOS4xIDI0LjgxNyBDIDIwLjIgMjYuMTE3IDIxLjkgMjYuNzE3IDIzLjggMjYuNzE3IEMgMjcuMSAyNi43MTcgMjkgMjQuNjE3IDI5IDI0LjYxNyBMIDI4LjggMjUuNjE3IEMgMjguNyAyNi4wMTcgMjkgMjYuNDE3IDI5LjQgMjYuNDE3IEwgMzIuOCAyNi40MTcgQyAzMy4zIDI2LjQxNyAzMy44IDI2LjAxNyAzMy45IDI1LjUxNyBMIDM1LjkgMTIuNzE3IEMgMzYgMTIuNTE3IDM1LjYgMTIuMTE3IDM1LjIgMTIuMTE3IFogTSAzMC4xIDE5LjMxNyBDIDI5LjcgMjEuNDE3IDI4LjEgMjIuOTE3IDI1LjkgMjIuOTE3IEMgMjQuOCAyMi45MTcgMjQgMjIuNjE3IDIzLjQgMjEuOTE3IEMgMjIuOCAyMS4yMTcgMjIuNiAyMC4zMTcgMjIuOCAxOS4zMTcgQyAyMy4xIDE3LjIxNyAyNC45IDE1LjcxNyAyNyAxNS43MTcgQyAyOC4xIDE1LjcxNyAyOC45IDE2LjExNyAyOS41IDE2LjcxNyBDIDMwIDE3LjQxNyAzMC4yIDE4LjMxNyAzMC4xIDE5LjMxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSA1NS4xIDEyLjExNyBMIDUxLjQgMTIuMTE3IEMgNTEgMTIuMTE3IDUwLjcgMTIuMzE3IDUwLjUgMTIuNjE3IEwgNDUuMyAyMC4yMTcgTCA0My4xIDEyLjkxNyBDIDQzIDEyLjQxNyA0Mi41IDEyLjExNyA0Mi4xIDEyLjExNyBMIDM4LjQgMTIuMTE3IEMgMzggMTIuMTE3IDM3LjYgMTIuNTE3IDM3LjggMTMuMDE3IEwgNDEuOSAyNS4xMTcgTCAzOCAzMC41MTcgQyAzNy43IDMwLjkxNyAzOCAzMS41MTcgMzguNSAzMS41MTcgTCA0Mi4yIDMxLjUxNyBDIDQyLjYgMzEuNTE3IDQyLjkgMzEuMzE3IDQzLjEgMzEuMDE3IEwgNTUuNiAxMy4wMTcgQyA1NS45IDEyLjcxNyA1NS42IDEyLjExNyA1NS4xIDEyLjExNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA2Ny41IDQuOTE3IEwgNTkuNyA0LjkxNyBDIDU5LjIgNC45MTcgNTguNyA1LjMxNyA1OC42IDUuODE3IEwgNTUuNSAyNS43MTcgQyA1NS40IDI2LjExNyA1NS43IDI2LjQxNyA1Ni4xIDI2LjQxNyBMIDYwLjEgMjYuNDE3IEMgNjAuNSAyNi40MTcgNjAuOCAyNi4xMTcgNjAuOCAyNS44MTcgTCA2MS43IDIwLjExNyBDIDYxLjggMTkuNjE3IDYyLjIgMTkuMjE3IDYyLjggMTkuMjE3IEwgNjUuMyAxOS4yMTcgQyA3MC40IDE5LjIxNyA3My40IDE2LjcxNyA3NC4yIDExLjgxNyBDIDc0LjUgOS43MTcgNzQuMiA4LjAxNyA3My4yIDYuODE3IEMgNzIgNS42MTcgNzAuMSA0LjkxNyA2Ny41IDQuOTE3IFogTSA2OC40IDEyLjIxNyBDIDY4IDE1LjAxNyA2NS44IDE1LjAxNyA2My44IDE1LjAxNyBMIDYyLjYgMTUuMDE3IEwgNjMuNCA5LjgxNyBDIDYzLjQgOS41MTcgNjMuNyA5LjMxNyA2NCA5LjMxNyBMIDY0LjUgOS4zMTcgQyA2NS45IDkuMzE3IDY3LjIgOS4zMTcgNjcuOSAxMC4xMTcgQyA2OC40IDEwLjUxNyA2OC41IDExLjIxNyA2OC40IDEyLjIxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5MC43IDEyLjExNyBMIDg3IDEyLjExNyBDIDg2LjcgMTIuMTE3IDg2LjQgMTIuMzE3IDg2LjQgMTIuNjE3IEwgODYuMiAxMy42MTcgTCA4NS45IDEzLjIxNyBDIDg1LjEgMTIuMDE3IDgzLjMgMTEuNjE3IDgxLjUgMTEuNjE3IEMgNzcuNCAxMS42MTcgNzMuOSAxNC43MTcgNzMuMiAxOS4xMTcgQyA3Mi44IDIxLjMxNyA3My4zIDIzLjQxNyA3NC42IDI0LjgxNyBDIDc1LjcgMjYuMTE3IDc3LjQgMjYuNzE3IDc5LjMgMjYuNzE3IEMgODIuNiAyNi43MTcgODQuNSAyNC42MTcgODQuNSAyNC42MTcgTCA4NC4zIDI1LjYxNyBDIDg0LjIgMjYuMDE3IDg0LjUgMjYuNDE3IDg0LjkgMjYuNDE3IEwgODguMyAyNi40MTcgQyA4OC44IDI2LjQxNyA4OS4zIDI2LjAxNyA4OS40IDI1LjUxNyBMIDkxLjQgMTIuNzE3IEMgOTEuNCAxMi41MTcgOTEuMSAxMi4xMTcgOTAuNyAxMi4xMTcgWiBNIDg1LjUgMTkuMzE3IEMgODUuMSAyMS40MTcgODMuNSAyMi45MTcgODEuMyAyMi45MTcgQyA4MC4yIDIyLjkxNyA3OS40IDIyLjYxNyA3OC44IDIxLjkxNyBDIDc4LjIgMjEuMjE3IDc4IDIwLjMxNyA3OC4yIDE5LjMxNyBDIDc4LjUgMTcuMjE3IDgwLjMgMTUuNzE3IDgyLjQgMTUuNzE3IEMgODMuNSAxNS43MTcgODQuMyAxNi4xMTcgODQuOSAxNi43MTcgQyA4NS41IDE3LjQxNyA4NS43IDE4LjMxNyA4NS41IDE5LjMxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5NS4xIDUuNDE3IEwgOTEuOSAyNS43MTcgQyA5MS44IDI2LjExNyA5Mi4xIDI2LjQxNyA5Mi41IDI2LjQxNyBMIDk1LjcgMjYuNDE3IEMgOTYuMiAyNi40MTcgOTYuNyAyNi4wMTcgOTYuOCAyNS41MTcgTCAxMDAgNS42MTcgQyAxMDAuMSA1LjIxNyA5OS44IDQuOTE3IDk5LjQgNC45MTcgTCA5NS44IDQuOTE3IEMgOTUuNCA0LjkxNyA5NS4yIDUuMTE3IDk1LjEgNS40MTcgWiI+PC9wYXRoPjwvc3ZnPg==" /></div>
