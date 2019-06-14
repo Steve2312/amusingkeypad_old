@@ -345,6 +345,17 @@ $(document).ready(function () {
         },
             'slow');
     });
+
+    document.getElementById("sumbitcart").onclick = function () {
+        document.getElementById("cartform").submit();
+    };
+
+    document.getElementById("addtocart").addEventListener('click', function () {
+        window.open('https://www.paypal.com/cgi-bin/webscr', 'paypal', 'width=400,height=700');
+        document.getElementById("2kbuyform").submit();
+    });
+
+
 });
 
 function changeCountryTo(text) {
@@ -352,5 +363,31 @@ function changeCountryTo(text) {
     console.log(url2);
     window.location.replace(url2 + `?country=${text}`);
 }
+
+$(document).ready(function () {
+    var lastQuote = 0;
+
+    function changeQuote() {
+        var quotes = [
+            "Amusing Device",
+            "Antecer",
+            "Amusing Keypad"
+        ];
+        do {
+            var rq = Math.floor(Math.random() * quotes.length);
+        } while (rq === lastQuote);
+        lastQuote = rq;
+        var rQuote = quotes[rq];
+        
+        document.getElementById("rQuote").style.opacity = 0;
+
+        setTimeout(function () {
+            document.getElementById("rQuote").innerHTML = rQuote;
+            document.getElementById("rQuote").style.opacity = 1;
+        }, 1000);
+    }
+
+    setInterval(changeQuote, 7000);
+});
 
 
