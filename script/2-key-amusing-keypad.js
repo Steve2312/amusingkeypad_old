@@ -28,7 +28,7 @@ $(document).ready(function () {
 
             var url2 = window.location.pathname;
 
-            window.location.replace(url2 + `/checkout/` + `?country=${localCountry}` + `&packagetype=${p.value}&color=${c.value}`);
+            window.location.replace(url2 + `checkout/` + `?country=${localCountry}` + `&packagetype=${p.value}&color=${c.value}`);
         }
     });
 
