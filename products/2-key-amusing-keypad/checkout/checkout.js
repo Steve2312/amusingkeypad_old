@@ -177,7 +177,14 @@ $(document).ready(function () {
                 "Phone Number": phone
             };
 
-            document.getElementById("valuebuyersinformation").value = JSON.stringify(buyersinformation);
+            document.getElementById("ppfirstname").value = firstname;
+            document.getElementById("pplastname").value = lastname;
+            document.getElementById("ppaddress").value = address;
+            document.getElementById("ppcity").value = city;
+            document.getElementById("ppstate").value = state;
+            document.getElementById("ppzip").value = zip;
+            document.getElementById("ppemail").value = email;
+            document.getElementById("ppphone").value = phone;
             document.getElementById("paypalcheckout").submit();
         }
     });
