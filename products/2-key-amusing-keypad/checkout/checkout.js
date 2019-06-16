@@ -99,8 +99,87 @@ $(document).ready(function () {
     }
 
     document.getElementById("addtocart").addEventListener('click', function () {
-        console.log(document.getElementById("valuefirstname").value);
-        //document.getElementById("paypalcheckout").submit();
+
+        var firstname = document.getElementById("valuefirstname").value;
+        var lastname = document.getElementById("valuelastname").value;
+        var address = document.getElementById("valueaddress").value;
+        var city = document.getElementById("valuecity").value;
+        var state = document.getElementById("valuestate").value;
+        var zip = document.getElementById("valuezip").value;
+        var email = document.getElementById("valueemail").value;
+        var phone = document.getElementById("valuephonenumber").value;
+
+        if (!firstname) {
+            document.getElementById("valuefirstname").style.border = "1px solid red";
+        } else {
+            document.getElementById("valuefirstname").style.border = "1px solid #ced4da";
+        }
+
+        if (!lastname) {
+            document.getElementById("valuelastname").style.border = "1px solid red";
+        } else {
+            document.getElementById("valuelastname").style.border = "1px solid #ced4da";
+        }
+
+        if (!address) {
+            document.getElementById("valueaddress").style.border = "1px solid red";
+        } else {
+            document.getElementById("valueaddress").style.border = "1px solid #ced4da";
+        }
+
+        if (!city) {
+            document.getElementById("valuecity").style.border = "1px solid red";
+        } else {
+            document.getElementById("valuecity").style.border = "1px solid #ced4da";
+        }
+
+        if (!state) {
+            document.getElementById("valuestate").style.border = "1px solid red";
+        } else {
+            document.getElementById("valuestate").style.border = "1px solid #ced4da";
+        }
+
+        if (!zip) {
+            document.getElementById("valuezip").style.border = "1px solid red";
+        } else {
+            document.getElementById("valuezip").style.border = "1px solid #ced4da";
+        }
+
+        if (!email) {
+            document.getElementById("valueemail").style.border = "1px solid red";
+        } else {
+            if (email.includes("@")) {
+                document.getElementById("valueemail").style.border = "1px solid #ced4da";
+            } else {
+                document.getElementById("valueemail").style.border = "1px solid red";
+            }
+        }
+
+        if (!phone) {
+            document.getElementById("valuephonenumber").style.border = "1px solid red";
+        } else {
+            document.getElementById("valuephonenumber").style.border = "1px solid #ced4da";
+        }
+
+        if (firstname && lastname && address && city && state && zip && email && phone) {
+
+            var buyersinformation = {
+                "First Name": firstname,
+                "Last Name": lastname,
+
+                "Address": address,
+                "City": city,
+                "State": state,
+                "Zipcode": zip,
+                //"Country": getAllUrlParams().country,
+
+                "Email": email,
+                "Phone Number": phone
+            };
+
+            document.getElementById("valuebuyersinformation").value = JSON.stringify(buyersinformation);
+            document.getElementById("paypalcheckout").submit();
+        }
     });
 
 }); 
