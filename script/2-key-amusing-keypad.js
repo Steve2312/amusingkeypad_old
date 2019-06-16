@@ -7,17 +7,13 @@ $(document).ready(function () {
 
         if (!p) {
             document.getElementById("packagetypetext").style.color = "red";
-        }
-
-        if (p) {
+        } else {
             document.getElementById("packagetypetext").style.color = "white";
         }
 
         if (!c) {
             document.getElementById("colortext").style.color = "red";
-        }
-
-        if (c) {
+        } else {
             document.getElementById("colortext").style.color = "white";
         }
 
@@ -33,3 +29,4 @@ $(document).ready(function () {
     });
 
 });
+ 

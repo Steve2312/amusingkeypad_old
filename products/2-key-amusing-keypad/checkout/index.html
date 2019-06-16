@@ -21,7 +21,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-firestore.js"></script>
 
-    <script src="app.js"></script>
+    <script src="checkout.js"></script>
 
     <script>
         $(window).on('beforeunload', function () {
@@ -36,34 +36,46 @@
                 <a href="/" style="border-color: #fff !important; transition: color 0.3s ease; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; animation: breathingwhite 3s linear infinite;" id="navicon">
                     <b>Antecer</b>
                 </a>
+                <div style="margin-top: 17px; white-space: nowrap;">
+                    <img id="flag" style="height: 20px;" />
+                    <span class="hovertext">Change country</span>
+                </div>
             </div>
 
             <div class="navbar-header hz-nav right">
                 <ul class="navbar-right">
-                    <li><a href="../../"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="../../products"><i class="fas fa-archive"></i>Products</a></li>
-                    <li><a href="../../driver"><i class="fas fa-terminal"></i>Drivers</a></li>
-                    <li><a href="../../customization"><i class="fas fa-palette"></i>Customization</a></li>
-                    <li><a href="../../contact"><i class="fas fa-file-signature"></i>Contact</a></li>
+                    <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="/products"><i class="fas fa-archive"></i>Products</a></li>
+                    <li><a href="/driver"><i class="fas fa-terminal"></i>Drivers</a></li>
+                    <li><a href="/customization"><i class="fas fa-palette"></i>Customization</a></li>
+                    <li><a href="/contact"><i class="fas fa-file-signature"></i>Contact</a></li>
+                    <!--<li><a id="sumbitcart"><i class="fas fa-shopping-cart"></i></a></li>-->
                 </ul>
             </div>
         </div>
     </nav>
 
     <nav id="navbar2" class="dropnavigation navbar animated fadeInDown stickyfirst">
-        <a href="/" class="navbar-brand" style="border-color: #fff !important; transition: color 0.3s ease; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; animation: breathingwhite 3s linear infinite;" id="navicon">
-            <b>Antecer</b>
-        </a>
-        <a onclick="clicksticky();" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span style="font-size: 25px;"><i class="fas fa-angle-down"></i></span>
+        <div class="navbar-header left">
+            <a href="/" style="border-color: #fff !important; transition: color 0.3s ease; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; animation: breathingwhite 3s linear infinite;" id="navicon">
+                <b>Antecer</b>
+            </a>
+
+            <div style="margin-top: 17px; white-space: nowrap;">
+                <img id="flag2" style="height: 20px;" />
+                <span class="hovertext2">Change country</span>
+            </div>
+        </div>
+        <a onclick="clicksticky();" style="font-size: 25px;" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <i class="fas fa-angle-down"></i>
         </a>
         <div class="collapse navbar-collapse cz-nav" id="collapsibleNavbar">
             <ul class="navbar-right">
-                <li><a href="../../"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="../../products"><i class="fas fa-archive"></i>Products</a></li>
-                <li><a href="../../driver"><i class="fas fa-terminal"></i>Drivers</a></li>
-                <li><a href="../../customization"><i class="fas fa-palette"></i>Customization</a></li>
-                <li><a href="../../contact"><i class="fas fa-file-signature"></i>Contact</a></li>
+                <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="/products"><i class="fas fa-archive"></i>Products</a></li>
+                <li><a href="/driver"><i class="fas fa-terminal"></i>Drivers</a></li>
+                <li><a href="/customization"><i class="fas fa-palette"></i>Customization</a></li>
+                <li><a href="/contact"><i class="fas fa-file-signature"></i>Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -72,7 +84,7 @@
         <img src="../../../images/19.png" />
     </div>
 
-    <div id="form_container" class="container animated2 fadeIn" style="align-items: center; justify-content: center; text-align: left; margin-top: 100px; display: block">
+    <div id="form_container" class="container animated2 fadeIn" style="align-items: center; justify-content: center; text-align: left; margin-top: 100px; display: none">
         <div class="row">
             <div class="col-md-12 animated2 fadeIn" style="display:block;">
                 <h2>Antecer's <a id="gradient">AmusingKeypad</a> Pro Review</h2>
@@ -82,60 +94,88 @@
         </div>
         <div class="row" style="margin-top: 20px;">
             <div class="col-md-12 animated2 fadeIn" style="display:block;">
+                <form id="paypalcheckout" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: none;">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="SZEEMV8NGW67W">
+                    <table>
+                        <tr>
+                            <td><input type="hidden" name="on0" value="Package Type"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="os0">
+                                    <option id="valuepackagetype" value=""></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="hidden" name="on1" value="Product Color"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="os1">
+                                    <option id="valuecolor" value=""></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="hidden" name="on2" value="Buyer information"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="hidden" name="os2" maxlength="200" value="LOKDOFDFJJSDJSFNSFNJSDJKNSDJKNSJKDSJKDJNK"></td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="currency_code" value="USD">
+                </form>
+
                 <form id="shopping">
                     <div class="form-row" style="margin-bottom: 1em;">
                         <div class="col">
                             <label for="inputAddress">First name*</label>
-                            <input type="text" class="form-control" placeholder="First name">
+                            <input id="valuefirstname" type="text" class="form-control" placeholder="First name" required>
                         </div>
                         <div class="col">
                             <label for="inputAddress">Last name*</label>
-                            <input type="text" class="form-control" placeholder="Last name">
+                            <input id="valuelastname" type="text" class="form-control" placeholder="Last name" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="inputAddress">Address*</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        <input id="valueadress" type="text" class="form-control" placeholder="1234 Main St" required>
                     </div>
 
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="validationCustom03">City*</label>
-                            <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid city.
-                            </div>
+                            <input id="valuecity" type="text" class="form-control" placeholder="City" required>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="validationCustom04">State*</label>
-                            <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+                            <input type="text" class="form-control" id="valuestate" placeholder="State" required>
                             <div class="invalid-feedback">
                                 Please provide a valid state.
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="validationCustom05">Zip*</label>
-                            <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid zip.
-                            </div>
+                            <input type="text" class="form-control" id="valuezip" placeholder="Zip" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="form_name">Email address*</label>
-                        <input type="text" class="form-control" id="form_name" placeholder="Email address">
+                        <input type="text" class="form-control" id="valueemail" placeholder="Email address" required>
                     </div>
 
                     <div class="form-group">
                         <label for="form_name">Phone Number*</label>
-                        <input type="text" class="form-control" id="form_name" placeholder="Phone Number">
+                        <input type="text" class="form-control" id="valuephonenumber" placeholder="Phone Number" required>
                     </div>
                 </form>
-
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-4">
                 <div class="row">
@@ -187,4 +227,4 @@
 
     </div>
 </body>
-</html>
+</html> 
