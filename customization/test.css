@@ -38,7 +38,7 @@ body {
 	flex-flow: column;
 }
 .menu>*{
-	margin: 5px;
+	margin: 5px 0px;
 }
 #tips {
 	position: fixed;
