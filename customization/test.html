@@ -28,7 +28,6 @@
 		<input id="brush" type="button" value="Brush Color" />
 		<input id="file" type="file" style="display: none;" />
 		<input id="load" type="button" value="Load Image" />
-		<input id="save" type="button" value="Save Image" />
 		<input id="print" type="button" value="Print Image" />
 	</div>
 	<div id="tips">
@@ -65,13 +64,13 @@
 			selectNode.style.clipPath = `inset(${clipTop}px ${clipRight}px ${clipBottom}px ${clipLeft}px round ${cropR})`;
 		}
 		// 打印对话框弹出事件
-		document.body.onbeforeprint = () => {
+		window.addEventListener('beforeprint', (event) => {
 			CropNode(document.querySelector('#cropImg'), '0mm', '0mm', '50mm', '50mm', '2.5mm');
-		}
+		});
 		// 打印对话框关闭事件
-		document.body.onafterprint = () => {
+		window.addEventListener('afterprint', (event) => {
 			document.querySelector('#cropImg').style.clipPath = 'initial';
-		}
+		});
 		// 图片拖动与缩放功能
 		function DragNode(itemNode) {
 			let params = {
@@ -83,26 +82,26 @@
 				flag: false,
 			};
 			// 鼠标滚轮事件
-			itemNode.onmousewheel = (event) => {
+			itemNode.addEventListener('wheel', (event) => {
 				if (params.zoomVal < 0.1 && event.deltaY > 0) return;
 				if (params.zoomVal > 2 && event.deltaY < 0) return;
 				params.zoomVal += event.deltaY > 0 ? -0.01 : +0.01;
 				itemNode.style.transform = `scale(${params.zoomVal})`;
-			}
+			});
 			// 鼠标在图片上按下事件
-			itemNode.onmousedown = (event) => {
+			itemNode.addEventListener('mousedown', (event) => {
 				params.flag = true;
 				params.currentX = event.clientX;
 				params.currentY = event.clientY;
-			}
+			});
 			// 鼠标按键释放全局事件
-			document.onmouseup = () => {
+			window.addEventListener('mouseup', (event) => {
 				params.flag = false;
 				params.left = itemNode.offsetLeft;
 				params.top = itemNode.offsetTop;
-			}
+			});
 			// 鼠标指针移动全局事件
-			document.onmousemove = (event) => {
+			window.addEventListener('mousemove', (event) => {
 				if (params.flag) {
 					let offsetX = event.clientX - params.currentX;
 					let offsetY = event.clientY - params.currentY;
@@ -110,9 +109,25 @@
 					itemNode.style.top = (params.top + offsetY) + "px";
 					event.preventDefault();	// 取消鼠标移动事件的默认操作
 				}
-			}
+			});
 		}
+		// 对目标图片绑定拖动&缩放功能
 		DragNode(document.querySelector('#cropImg'));
+		// 载入文件功能
+		document.querySelector('#file').addEventListener('change', (event) => {
+			let loadFile = event.currentTarget.files[0];
+			document.querySelector('#cropImg').src = URL.createObjectURL(loadFile);
+			document.querySelector('#cropImg').style = '';
+			URL.revokeObjectURL(loadFile);
+		});
+		// 点击LoadImage按钮转为触发file按钮
+		document.querySelector('#load').addEventListener('click', (event) => {
+			document.querySelector('#file').click();
+		});
+		// 打印按钮点击事件
+		document.querySelector('#print').addEventListener('click', (event) => {
+			window.print();
+		});
 	</script>
 </body>
 
