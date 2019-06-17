@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="test.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="page">
+		<div class="content">
+			<img id="cropImg" src="002.jpg" />
+			<svg class="keypadpro" version="1.1" xmlns="http://www.w3.org/2000/svg"
+				 style="width:50mm; height:50mm; fill:transparent; stroke-width: 0.2mm; stroke:gray">
+				<rect class="outline" x="0mm" y="0mm" rx="2.5mm" ry="2.5mm" width="50mm" height="50mm" />
+				<circle class="assHole" cx="4mm" cy="4mm" r="2.5mm" />
+				<circle class="assHole" cx="46mm" cy="4mm" r="2.5mm" />
+				<circle class="assHole" cx="46mm" cy="46mm" r="2.5mm" />
+				<circle class="assHole" cx="4mm" cy="46mm" r="2.5mm" />
+				<rect class="switchHole" x="8mm" y="8mm" width="14mm" height="14mm" />
+				<rect class="switchHole" x="28mm" y="8mm" width="14mm" height="14mm" />
+				<circle class="buttonHole" cx="13mm" cy="34mm" r="2.3mm" />
+				<circle class="buttonHole" cx="25mm" cy="34mm" r="2.3mm" />
+				<circle class="buttonHole" cx="37mm" cy="34mm" r="2.3mm" />
+			</svg>
+		</div>
+	</div>
+	<div class="menu">
+		<input id="brush" type="button" value="Brush Color" />
+		<input id="file" type="file" style="display: none;" />
+		<input id="load" type="button" value="Load Image" />
+		<input id="save" type="button" value="Save Image" />
+		<input id="print" type="button" value="Print Image" />
+	</div>
+	<div id="tips">
+		Browser Support List:
+		<em>Chrome</em>
+		<em>Firefox</em>
+		<em>Opera</em>
+	</div>
+	<script>
+		// 图片裁剪
+		function CropNode(selectNode, cropX, cropY, cropW, cropH, cropR) {
+			// 获取图片尺寸
+			let zoomVal = selectNode.style.transform ? selectNode.style.transform.match(/scale\(([^\)]*)/)[1] : 1;
+			let nodeX = selectNode.getBoundingClientRect().left;
+			let nodeY = selectNode.getBoundingClientRect().top;
+			let nodeW = selectNode.getBoundingClientRect().width;
+			let nodeH = selectNode.getBoundingClientRect().height;
+			// 获取裁剪尺寸
+			let cutLine = document.querySelector('svg.keypadpro');
+			let cutX = cutLine.getBoundingClientRect().left;
+			let cutY = cutLine.getBoundingClientRect().top;
+			let cutW = cutLine.getBoundingClientRect().width;
+			let cutH = cutLine.getBoundingClientRect().height;
+			// 计算裁剪路径
+			let clipLeft = cutX - nodeX;
+			let clipTop = cutY - nodeY;
+			let clipRight = nodeW - clipLeft - cutW;
+			let clipBottom = nodeH - clipTop - cutH;
+			clipLeft /= zoomVal;
+			clipTop /= zoomVal;
+			clipRight /= zoomVal;
+			clipBottom /= zoomVal;
+			// 设置裁剪样式
+			selectNode.style.clipPath = `inset(${clipTop}px ${clipRight}px ${clipBottom}px ${clipLeft}px round ${cropR})`;
+		}
+		// 打印对话框弹出事件
+		document.body.onbeforeprint = () => {
+			CropNode(document.querySelector('#cropImg'), '0mm', '0mm', '50mm', '50mm', '2.5mm');
+		}
+		// 打印对话框关闭事件
+		document.body.onafterprint = () => {
+			document.querySelector('#cropImg').style.clipPath = 'initial';
+		}
+		// 图片拖动与缩放功能
+		function DragNode(itemNode) {
+			let params = {
+				zoomVal: 1,
+				left: itemNode.offsetLeft,
+				top: itemNode.offsetTop,
+				currentX: 0,
+				currentY: 0,
+				flag: false,
+			};
+			// 鼠标滚轮事件
+			itemNode.onmousewheel = (event) => {
+				if (params.zoomVal < 0.1 && event.deltaY > 0) return;
+				if (params.zoomVal > 2 && event.deltaY < 0) return;
+				params.zoomVal += event.deltaY > 0 ? -0.01 : +0.01;
+				itemNode.style.transform = `scale(${params.zoomVal})`;
+			}
+			// 鼠标在图片上按下事件
+			itemNode.onmousedown = (event) => {
+				params.flag = true;
+				params.currentX = event.clientX;
+				params.currentY = event.clientY;
+			}
+			// 鼠标按键释放全局事件
+			document.onmouseup = () => {
+				params.flag = false;
+				params.left = itemNode.offsetLeft;
+				params.top = itemNode.offsetTop;
+			}
+			// 鼠标指针移动全局事件
+			document.onmousemove = (event) => {
+				if (params.flag) {
+					let offsetX = event.clientX - params.currentX;
+					let offsetY = event.clientY - params.currentY;
+					itemNode.style.left = (params.left + offsetX) + "px";
+					itemNode.style.top = (params.top + offsetY) + "px";
+					event.preventDefault();	// 取消鼠标移动事件的默认操作
+				}
+			}
+		}
+		DragNode(document.querySelector('#cropImg'));
+	</script>
+</body>
+
+</html>
