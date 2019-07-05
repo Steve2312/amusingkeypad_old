@@ -3,6 +3,11 @@
 
     var navbar = document.getElementById("navbar");
     var navbar2 = document.getElementById("navbar2");
+
+    var footer = document.getElementById("footer_container");
+
+    var scrollmenu = document.getElementById("scrollmenu_id");
+
     var sticky = navbar.offsetTop;
 
     function onscroll() {
@@ -10,10 +15,18 @@
         if (window.pageYOffset > sticky) {
             navbar.classList.add("sticky");
             navbar2.classList.add("sticky");
+
+            footer.classList.add("footer_container_scroll");
+
+            scrollmenu.classList.add("scrollmenu_scroll");
         } 
         if (!window.pageYOffset > sticky) {
             navbar.classList.remove("sticky");
             navbar2.classList.remove("sticky");
+
+            footer.classList.remove("footer_container_scroll");
+
+            scrollmenu.classList.remove("scrollmenu_scroll");
         }
     }
 });
@@ -175,26 +188,28 @@ $(document).ready(function () {
         flag2.src = `https://steve2312.github.io/flags/${country}.png`;
     }
 
-    $("#flag").click(function () {
-        $('html,body').animate({
-            scrollTop: $(".changecountryhr").offset().top
-        },
-            'slow');
-    });
-
-    $("#flag2").click(function () {
-        $('html,body').animate({
-            scrollTop: $(".changecountryhr").offset().top
-        },
-            'slow');
-    });
-
 });
 
 function changeCountryTo(text) {
     var url2 = window.location.pathname;
     console.log(url2);
     window.location.replace(url2 + `?country=${text}`);
+}
+
+function toggleCountryList() {
+    var scrollmenu = document.getElementById("scrollmenu_id");
+
+    if ($("#scrollmenu_id").hasClass('scrollmenu_hidden')) {
+        setTimeout(function () { 
+        scrollmenu.classList.remove('scrollmenu_hidden');
+            scrollmenu.classList.add('scrollmenu_show');
+        }, 1);
+        scrollmenu.style.display = "block";
+    } else {
+        scrollmenu.classList.add('scrollmenu_hidden');
+        scrollmenu.classList.remove('scrollmenu_show');
+        setTimeout(function () { scrollmenu.style.display = "none"; }, 500);
+    }
 }
 
 
