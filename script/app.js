@@ -196,12 +196,16 @@ function changeCountryTo(text) {
     window.location.replace(url2 + `?country=${text}`);
 }
 
+$(document).ready(function () {
+    var scrollmenu = document.getElementById("scrollmenu_id");
+    scrollmenu.style.display = "none";
+});
+
 function toggleCountryList() {
     var scrollmenu = document.getElementById("scrollmenu_id");
-
     if ($("#scrollmenu_id").hasClass('scrollmenu_hidden')) {
-        setTimeout(function () { 
-        scrollmenu.classList.remove('scrollmenu_hidden');
+        setTimeout(function () {
+            scrollmenu.classList.remove('scrollmenu_hidden');
             scrollmenu.classList.add('scrollmenu_show');
         }, 1);
         scrollmenu.style.display = "block";
@@ -211,5 +215,3 @@ function toggleCountryList() {
         setTimeout(function () { scrollmenu.style.display = "none"; }, 500);
     }
 }
-
-
