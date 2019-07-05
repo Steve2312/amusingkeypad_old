@@ -31,14 +31,14 @@ body {
 .menu {
 	position: fixed;
 	right: 20px;
-	bottom: 10px;
+	bottom: 30px;
 	width: 120px;
 	height: auto;
 	display: flex;
 	flex-flow: column;
 }
 .menu>*{
-	margin: 5px;
+	margin: 5px 0px;
 }
 #tips {
 	position: fixed;
