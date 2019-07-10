@@ -217,11 +217,15 @@ function toggleCountryList() {
         setTimeout(function () { scrollmenu.style.display = "none"; }, 500);
     }
 
-    if ($("#scrollmenu_id").hasClass('scrollmenu_scroll') && $("#footer_container").hasClass('footer_container_scroll')) {
-        footer.classList.remove("footer_container_scroll");
-        scrollmenu.classList.remove("scrollmenu_scroll");
-    } else {
-        footer.classList.add("footer_container_scroll");
-        scrollmenu.classList.add("scrollmenu_scroll");
+    var sticky = navbar.offsetTop;
+
+    if (!window.pageYOffset > sticky) {
+        if ($("#scrollmenu_id").hasClass('scrollmenu_scroll') && $("#footer_container").hasClass('footer_container_scroll')) {
+            footer.classList.remove("footer_container_scroll");
+            scrollmenu.classList.remove("scrollmenu_scroll");
+        } else {
+            footer.classList.add("footer_container_scroll");
+            scrollmenu.classList.add("scrollmenu_scroll");
+        }
     }
 }
