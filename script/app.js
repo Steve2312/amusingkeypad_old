@@ -203,6 +203,8 @@ $(document).ready(function () {
 
 function toggleCountryList() {
     var scrollmenu = document.getElementById("scrollmenu_id");
+    var footer = document.getElementById("footer_container");
+
     if ($("#scrollmenu_id").hasClass('scrollmenu_hidden')) {
         setTimeout(function () {
             scrollmenu.classList.remove('scrollmenu_hidden');
@@ -213,5 +215,13 @@ function toggleCountryList() {
         scrollmenu.classList.add('scrollmenu_hidden');
         scrollmenu.classList.remove('scrollmenu_show');
         setTimeout(function () { scrollmenu.style.display = "none"; }, 500);
+    }
+
+    if ($("#scrollmenu_id").hasClass('scrollmenu_scroll') && $("#footer_container").hasClass('footer_container_scroll')) {
+        footer.classList.remove("footer_container_scroll");
+        scrollmenu.classList.remove("scrollmenu_scroll");
+    } else {
+        footer.classList.add("footer_container_scroll");
+        scrollmenu.classList.add("scrollmenu_scroll");
     }
 }
