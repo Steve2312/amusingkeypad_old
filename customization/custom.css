@@ -52,15 +52,15 @@ body {
 	color: #666;
 }
 
-@page {
-	size: a4 !important;
-	margin: 0 !important;
-}
 @media print {
+	@page {
+		size: A4 portrait; /*A4: 210mm × 297mm*/ /*portrait|纵向; landscape|横向;*/
+		margin: 0; /*页边距*/
+	}
 	html, body {
-		width: 210mm;
+		width: 210mm !important;
 		min-width: 210mm !important;
-		height: 297mm;
+		height: 297mm !important;
 		min-height: 297mm !important;
 	}
 	body>*, .custom_panel>*{
