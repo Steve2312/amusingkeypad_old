@@ -37,7 +37,7 @@
                     <b>Antecer</b>
                 </a>
                 <div style="margin-top: 17px; white-space: nowrap;">
-                    <img id="flag" style="height: 20px;" />
+                    <img id="flag" style="height: 20px;"  onclick="toggleCountryList();"/>
                     <span class="hovertext">Change country</span>
                 </div>
             </div>
@@ -62,7 +62,7 @@
             </a>
 
             <div style="margin-top: 17px; white-space: nowrap;">
-                <img id="flag2" style="height: 20px;" />
+                <img id="flag2" style="height: 20px;"  onclick="toggleCountryList();" />
                 <span class="hovertext2">Change country</span>
             </div>
         </div>
@@ -91,6 +91,7 @@
                 <p style="margin-left: 10px;">* = Required</p>
             </div>
         </div>
+
         <div class="row" style="margin-top: 20px;">
             <div class="col-md-12 animated2 fadeIn" style="display:block;">
                 <form id="paypalcheckout" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: none;">

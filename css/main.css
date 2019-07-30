@@ -13,6 +13,93 @@ body {
     overflow-x: hidden;
 }
 
+.footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer li {
+    display: inline-block;
+    margin: 12px 8px 12px 8px;
+}
+
+.footertext:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.footer ul li ul {
+    max-height: 350px;
+    max-width: 165px;
+    overflow: auto;
+}
+
+.scrollmenu {
+    background-color: transparent;
+    transition: 0.5s background-color;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    transform: translateX(-14%) translateY(-110.1%);
+    transition: 0.5s background-color;
+    color: white !important;
+    transition: 0.5s color;
+}
+
+    .scrollmenu li:hover a:hover {
+        color: #757575 !important;
+        transition: 0.5s color;
+    }
+
+    .scrollmenu_scroll {
+        background-color: black;
+        transition: 0.5s background-color;
+    }
+
+.scrollmenu_hidden {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.scrollmenu_show {
+    opacity: 1;
+    transition: 0.5s;
+    display: block;
+}
+
+    .scrollmenu li {
+        max-width: 120px;
+        min-width: 115px;
+    }
+
+        .scrollmenu li img {
+            height: 12px;
+            margin: 2px;
+        }
+
+        .scrollmenu li a {
+            color: white;
+            font-size: 13px;
+        }
+
+.style-1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: black;
+    border: 0px;
+}
+
+.style-1::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.style-1::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
 #rQuote {
     -webkit-transition: opacity .9s ease-in-out;
     -moz-transition: opacity .9s ease-in-out;
@@ -22,6 +109,30 @@ body {
     font-size: 6vw;
 }
 
+.footer_container {
+    background: transparent;
+    color: #757575;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    transition: 0.5s background;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer_container_scroll {
+    background: #000000 !important;
+    transition: 0.5s background;
+    transition: 0.5s border-top;
+}
+
+.scrollmenu_scroll_product {
+    background-color: black;
+}
+
+.footer_container_scroll_product {
+    background: #000000 !important;
+}
 .banner-nav-img {
     /* The image used */
     background-image: linear-gradient(#000000, transparent, #000000), url("../images/5new.jpg");

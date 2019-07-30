@@ -45,7 +45,70 @@
     </script>
 
 </head>
-<body>
+<body class="style-1">
+    <div id="footer_container" class="footer_container">
+        <div class="container animated2 fadeIn" style="align-items: center; justify-content: center; text-align: center;">
+            <div class="row">
+                <div class="col-md-12" style="display:block;">
+                    <div class="row footer footer_container_scroll_product">
+                        <ul>
+                            <li class="footertext">Global</li>
+                            <li>|</li>
+                            <li class="footertext">Antecer</li>
+                            <li>|</li>
+                            <li class="footertext">
+                                <a onclick="toggleCountryList();">Change Country</a>
+                                <ul class="scrollmenu style-1 scrollmenu_hidden scrollmenu_scroll_product" id="scrollmenu_id">
+                                    <li onclick="changeCountryTo('au')"><img src="../../flags/au.png" /><a>Australia</a></li>
+                                    <li onclick="changeCountryTo('at')"><img src="../../flags/at.png" /><a>Austria</a></li>
+                                    <li onclick="changeCountryTo('be')"><img src="../../flags/be.png" /><a>Belgium</a></li>
+                                    <li onclick="changeCountryTo('br')"><img src="../../flags/br.png" /><a>Brazil</a></li>
+                                    <li onclick="changeCountryTo('ca')"><img src="../../flags/ca.png" /><a>Canada</a></li>
+                                    <li onclick="changeCountryTo('hk')"><img src="../../flags/hk.png" /><a>Hong Kong</a></li>
+                                    <li onclick="changeCountryTo('dk')"><img src="../../flags/dk.png" /><a>Denmark</a></li>
+                                    <li onclick="changeCountryTo('fi')"><img src="../../flags/fi.png" /><a>Finland</a></li>
+                                    <li onclick="changeCountryTo('fr')"><img src="../../flags/fr.png" /><a>France</a></li>
+                                    <li onclick="changeCountryTo('gr')"><img src="../../flags/gr.png" /><a>Greece</a></li>
+                                    <li onclick="changeCountryTo('hu')"><img src="../../flags/hu.png" /><a>Hungary</a></li>
+                                    <li onclick="changeCountryTo('id')"><img src="../../flags/id.png" /><a>Indonesia</a></li>
+                                    <li onclick="changeCountryTo('ie')"><img src="../../flags/ie.png" /><a>Ireland</a></li>
+
+                                    <li onclick="changeCountryTo('il')"><img src="../../flags/il.png" /><a>Israel</a></li>
+                                    <li onclick="changeCountryTo('it')"><img src="../../flags/it.png" /><a>Italy</a></li>
+                                    <li onclick="changeCountryTo('jp')"><img src="../../flags/jp.png" /><a>Japan</a></li>
+                                    <li onclick="changeCountryTo('kz')"><img src="../../flags/kz.png" /><a>Kazakhstan</a></li>
+                                    <li onclick="changeCountryTo('kr')"><img src="../../flags/kr.png" /><a>Korea</a></li>
+                                    <li onclick="changeCountryTo('lu')"><img src="../../flags/lu.png" /><a>Luxembourg</a></li>
+                                    <li onclick="changeCountryTo('my')"><img src="../../flags/my.png" /><a>Malaysia</a></li>
+                                    <li onclick="changeCountryTo('mx')"><img src="../../flags/mx.png" /><a>Mexico</a></li>
+                                    <li onclick="changeCountryTo('nl')"><img src="../../flags/nl.png" /><a>Netherlands</a></li>
+                                    <li onclick="changeCountryTo('nz')"><img src="../../flags/nz.png" /><a>New Zealand</a></li>
+                                    <li onclick="changeCountryTo('no')"><img src="../../flags/no.png" /><a>Norway</a></li>
+                                    <li onclick="changeCountryTo('pl')"><img src="../../flags/pl.png" /><a>Poland</a></li>
+                                    <li onclick="changeCountryTo('pt')"><img src="../../flags/pt.png" /><a>Portugal</a></li>
+
+                                    <li onclick="changeCountryTo('ru')"><img src="../../flags/ru.png" /><a>Russia</a></li>
+                                    <li onclick="changeCountryTo('sa')"><img src="../../flags/sa.png" /><a>Saudi Arabia</a></li>
+                                    <li onclick="changeCountryTo('sg')"><img src="../../flags/sg.png" /><a>Singapore</a></li>
+                                    <li onclick="changeCountryTo('es')"><img src="../../flags/es.png" /><a>Spain</a></li>
+                                    <li onclick="changeCountryTo('se')"><img src="../../flags/se.png" /><a>Sweden</a></li>
+                                    <li onclick="changeCountryTo('ch')"><img src="../../flags/ch.png" /><a>Switzerland</a></li>
+                                    <li onclick="changeCountryTo('th')"><img src="../../flags/th.png" /><a>Thailand</a></li>
+                                    <li onclick="changeCountryTo('tr')"><img src="../../flags/tr.png" /><a>Turkey</a></li>
+                                    <li onclick="changeCountryTo('ua')"><img src="../../flags/ua.png" /><a>Ukraine</a></li>
+                                    <li onclick="changeCountryTo('gb')"><img src="../../flags/gb.png" /><a>United Kingdom</a></li>
+                                    <li onclick="changeCountryTo('us')"><img src="../../flags/us.png" /><a>United States</a></li>
+                                    <li onclick="changeCountryTo('vn')"><img src="../../flags/vn.png" /><a>Vietnam</a></li>
+
+                                    <li onclick="changeCountryTo('gl')" class="last"><img src="../../flags/gl.png" /><a>Global</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <form id="cartform" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
         <input type="hidden" name="cmd" value="_s-xclick">
@@ -59,7 +122,7 @@
                     <b>Antecer</b>
                 </a>
                 <div style="margin-top: 17px; white-space: nowrap;">
-                    <img id="flag" style="height: 20px;" />
+                    <img id="flag" style="height: 20px;" onclick="toggleCountryList();"/>
                     <span class="hovertext">Change country</span>
                 </div>
             </div>
@@ -84,7 +147,7 @@
             </a>
 
             <div style="margin-top: 17px; white-space: nowrap;">
-                <img id="flag2" style="height: 20px;" />
+                <img id="flag2" style="height: 20px;" onclick="toggleCountryList();" />
                 <span class="hovertext2">Change country</span>
             </div>
         </div>
@@ -297,21 +360,21 @@
                                 </tr>
                             </table>
                             <!--
-    <p style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important; margin-top: 10px;"> Leave a message </p>
-    <table style="margin-right:auto; width: 100%;">
-        <tr><td><input type="hidden" name="on2" value="Leave message"></td></tr>
-        <tr><td><textarea rows="4" cols="4" type="text" name="os2" maxlength="200" class="inputtextcss"></textarea></td></tr>
-    </table>
-        -->
+                            <p style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important; margin-top: 10px;"> Leave a message </p>
+                            <table style="margin-right:auto; width: 100%;">
+                                <tr><td><input type="hidden" name="on2" value="Leave message"></td></tr>
+                                <tr><td><textarea rows="4" cols="4" type="text" name="os2" maxlength="200" class="inputtextcss"></textarea></td></tr>
+                            </table>
+                                -->
                         </form>
                         <p style="margin-bottom: 0px; margin-top: 20px;">Proceed to check out with :</p>
                         <div class="cursor" id="addtocart" style="margin-left:auto; margin-right:auto;"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAyNCAzMiIgeG1sbnM9Imh0dHA6JiN4MkY7JiN4MkY7d3d3LnczLm9yZyYjeDJGOzIwMDAmI3gyRjtzdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiPjxwYXRoIGZpbGw9IiMwMDljZGUiIGQ9Ik0gMjAuOTA1IDkuNSBDIDIxLjE4NSA3LjQgMjAuOTA1IDYgMTkuNzgyIDQuNyBDIDE4LjU2NCAzLjMgMTYuNDExIDIuNiAxMy42OTcgMi42IEwgNS43MzkgMi42IEMgNS4yNzEgMi42IDQuNzEgMy4xIDQuNjE1IDMuNiBMIDEuMzM5IDI1LjggQyAxLjMzOSAyNi4yIDEuNjIgMjYuNyAyLjA4OCAyNi43IEwgNi45NTYgMjYuNyBMIDYuNjc1IDI4LjkgQyA2LjU4MSAyOS4zIDYuODYyIDI5LjYgNy4yMzYgMjkuNiBMIDExLjM1NiAyOS42IEMgMTEuODI1IDI5LjYgMTIuMjkyIDI5LjMgMTIuMzg2IDI4LjggTCAxMi4zODYgMjguNSBMIDEzLjIyOCAyMy4zIEwgMTMuMjI4IDIzLjEgQyAxMy4zMjIgMjIuNiAxMy43OSAyMi4yIDE0LjI1OCAyMi4yIEwgMTQuODIxIDIyLjIgQyAxOC44NDUgMjIuMiAyMS45MzUgMjAuNSAyMi44NzEgMTUuNSBDIDIzLjMzOSAxMy40IDIzLjE1MyAxMS43IDIyLjAyOSAxMC41IEMgMjEuNzQ4IDEwLjEgMjEuMjc5IDkuOCAyMC45MDUgOS41IEwgMjAuOTA1IDkuNSI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMTIxNjkiIGQ9Ik0gMjAuOTA1IDkuNSBDIDIxLjE4NSA3LjQgMjAuOTA1IDYgMTkuNzgyIDQuNyBDIDE4LjU2NCAzLjMgMTYuNDExIDIuNiAxMy42OTcgMi42IEwgNS43MzkgMi42IEMgNS4yNzEgMi42IDQuNzEgMy4xIDQuNjE1IDMuNiBMIDEuMzM5IDI1LjggQyAxLjMzOSAyNi4yIDEuNjIgMjYuNyAyLjA4OCAyNi43IEwgNi45NTYgMjYuNyBMIDguMjY3IDE4LjQgTCA4LjE3MyAxOC43IEMgOC4yNjcgMTguMSA4LjczNSAxNy43IDkuMjk2IDE3LjcgTCAxMS42MzYgMTcuNyBDIDE2LjIyNCAxNy43IDE5Ljc4MiAxNS43IDIwLjkwNSAxMC4xIEMgMjAuODEyIDkuOCAyMC45MDUgOS43IDIwLjkwNSA5LjUiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDAzMDg3IiBkPSJNIDkuNDg1IDkuNSBDIDkuNTc3IDkuMiA5Ljc2NSA4LjkgMTAuMDQ2IDguNyBDIDEwLjIzMiA4LjcgMTAuMzI2IDguNiAxMC41MTMgOC42IEwgMTYuNjkyIDguNiBDIDE3LjQ0MiA4LjYgMTguMTg5IDguNyAxOC43NTMgOC44IEMgMTguOTM5IDguOCAxOS4xMjcgOC44IDE5LjMxNCA4LjkgQyAxOS41MDEgOSAxOS42ODggOSAxOS43ODIgOS4xIEMgMTkuODc1IDkuMSAxOS45NjggOS4xIDIwLjA2MyA5LjEgQyAyMC4zNDMgOS4yIDIwLjYyNCA5LjQgMjAuOTA1IDkuNSBDIDIxLjE4NSA3LjQgMjAuOTA1IDYgMTkuNzgyIDQuNiBDIDE4LjY1OCAzLjIgMTYuNTA2IDIuNiAxMy43OSAyLjYgTCA1LjczOSAyLjYgQyA1LjI3MSAyLjYgNC43MSAzIDQuNjE1IDMuNiBMIDEuMzM5IDI1LjggQyAxLjMzOSAyNi4yIDEuNjIgMjYuNyAyLjA4OCAyNi43IEwgNi45NTYgMjYuNyBMIDguMjY3IDE4LjQgTCA5LjQ4NSA5LjUgWiI+PC9wYXRoPjwvc3ZnPg==" alt="PP" class="paypal-logo paypal-logo-pp paypal-logo-color-blue" style="visibility: visible;"> <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMTAwIDMyIiB4bWxucz0iaHR0cDomI3gyRjsmI3gyRjt3d3cudzMub3JnJiN4MkY7MjAwMCYjeDJGO3N2ZyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pbllNaW4gbWVldCI+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAxMiA0LjkxNyBMIDQuMiA0LjkxNyBDIDMuNyA0LjkxNyAzLjIgNS4zMTcgMy4xIDUuODE3IEwgMCAyNS44MTcgQyAtMC4xIDI2LjIxNyAwLjIgMjYuNTE3IDAuNiAyNi41MTcgTCA0LjMgMjYuNTE3IEMgNC44IDI2LjUxNyA1LjMgMjYuMTE3IDUuNCAyNS42MTcgTCA2LjIgMjAuMjE3IEMgNi4zIDE5LjcxNyA2LjcgMTkuMzE3IDcuMyAxOS4zMTcgTCA5LjggMTkuMzE3IEMgMTQuOSAxOS4zMTcgMTcuOSAxNi44MTcgMTguNyAxMS45MTcgQyAxOSA5LjgxNyAxOC43IDguMTE3IDE3LjcgNi45MTcgQyAxNi42IDUuNjE3IDE0LjYgNC45MTcgMTIgNC45MTcgWiBNIDEyLjkgMTIuMjE3IEMgMTIuNSAxNS4wMTcgMTAuMyAxNS4wMTcgOC4zIDE1LjAxNyBMIDcuMSAxNS4wMTcgTCA3LjkgOS44MTcgQyA3LjkgOS41MTcgOC4yIDkuMzE3IDguNSA5LjMxNyBMIDkgOS4zMTcgQyAxMC40IDkuMzE3IDExLjcgOS4zMTcgMTIuNCAxMC4xMTcgQyAxMi45IDEwLjUxNyAxMy4xIDExLjIxNyAxMi45IDEyLjIxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAzNS4yIDEyLjExNyBMIDMxLjUgMTIuMTE3IEMgMzEuMiAxMi4xMTcgMzAuOSAxMi4zMTcgMzAuOSAxMi42MTcgTCAzMC43IDEzLjYxNyBMIDMwLjQgMTMuMjE3IEMgMjkuNiAxMi4wMTcgMjcuOCAxMS42MTcgMjYgMTEuNjE3IEMgMjEuOSAxMS42MTcgMTguNCAxNC43MTcgMTcuNyAxOS4xMTcgQyAxNy4zIDIxLjMxNyAxNy44IDIzLjQxNyAxOS4xIDI0LjgxNyBDIDIwLjIgMjYuMTE3IDIxLjkgMjYuNzE3IDIzLjggMjYuNzE3IEMgMjcuMSAyNi43MTcgMjkgMjQuNjE3IDI5IDI0LjYxNyBMIDI4LjggMjUuNjE3IEMgMjguNyAyNi4wMTcgMjkgMjYuNDE3IDI5LjQgMjYuNDE3IEwgMzIuOCAyNi40MTcgQyAzMy4zIDI2LjQxNyAzMy44IDI2LjAxNyAzMy45IDI1LjUxNyBMIDM1LjkgMTIuNzE3IEMgMzYgMTIuNTE3IDM1LjYgMTIuMTE3IDM1LjIgMTIuMTE3IFogTSAzMC4xIDE5LjMxNyBDIDI5LjcgMjEuNDE3IDI4LjEgMjIuOTE3IDI1LjkgMjIuOTE3IEMgMjQuOCAyMi45MTcgMjQgMjIuNjE3IDIzLjQgMjEuOTE3IEMgMjIuOCAyMS4yMTcgMjIuNiAyMC4zMTcgMjIuOCAxOS4zMTcgQyAyMy4xIDE3LjIxNyAyNC45IDE1LjcxNyAyNyAxNS43MTcgQyAyOC4xIDE1LjcxNyAyOC45IDE2LjExNyAyOS41IDE2LjcxNyBDIDMwIDE3LjQxNyAzMC4yIDE4LjMxNyAzMC4xIDE5LjMxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSA1NS4xIDEyLjExNyBMIDUxLjQgMTIuMTE3IEMgNTEgMTIuMTE3IDUwLjcgMTIuMzE3IDUwLjUgMTIuNjE3IEwgNDUuMyAyMC4yMTcgTCA0My4xIDEyLjkxNyBDIDQzIDEyLjQxNyA0Mi41IDEyLjExNyA0Mi4xIDEyLjExNyBMIDM4LjQgMTIuMTE3IEMgMzggMTIuMTE3IDM3LjYgMTIuNTE3IDM3LjggMTMuMDE3IEwgNDEuOSAyNS4xMTcgTCAzOCAzMC41MTcgQyAzNy43IDMwLjkxNyAzOCAzMS41MTcgMzguNSAzMS41MTcgTCA0Mi4yIDMxLjUxNyBDIDQyLjYgMzEuNTE3IDQyLjkgMzEuMzE3IDQzLjEgMzEuMDE3IEwgNTUuNiAxMy4wMTcgQyA1NS45IDEyLjcxNyA1NS42IDEyLjExNyA1NS4xIDEyLjExNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA2Ny41IDQuOTE3IEwgNTkuNyA0LjkxNyBDIDU5LjIgNC45MTcgNTguNyA1LjMxNyA1OC42IDUuODE3IEwgNTUuNSAyNS43MTcgQyA1NS40IDI2LjExNyA1NS43IDI2LjQxNyA1Ni4xIDI2LjQxNyBMIDYwLjEgMjYuNDE3IEMgNjAuNSAyNi40MTcgNjAuOCAyNi4xMTcgNjAuOCAyNS44MTcgTCA2MS43IDIwLjExNyBDIDYxLjggMTkuNjE3IDYyLjIgMTkuMjE3IDYyLjggMTkuMjE3IEwgNjUuMyAxOS4yMTcgQyA3MC40IDE5LjIxNyA3My40IDE2LjcxNyA3NC4yIDExLjgxNyBDIDc0LjUgOS43MTcgNzQuMiA4LjAxNyA3My4yIDYuODE3IEMgNzIgNS42MTcgNzAuMSA0LjkxNyA2Ny41IDQuOTE3IFogTSA2OC40IDEyLjIxNyBDIDY4IDE1LjAxNyA2NS44IDE1LjAxNyA2My44IDE1LjAxNyBMIDYyLjYgMTUuMDE3IEwgNjMuNCA5LjgxNyBDIDYzLjQgOS41MTcgNjMuNyA5LjMxNyA2NCA5LjMxNyBMIDY0LjUgOS4zMTcgQyA2NS45IDkuMzE3IDY3LjIgOS4zMTcgNjcuOSAxMC4xMTcgQyA2OC40IDEwLjUxNyA2OC41IDExLjIxNyA2OC40IDEyLjIxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5MC43IDEyLjExNyBMIDg3IDEyLjExNyBDIDg2LjcgMTIuMTE3IDg2LjQgMTIuMzE3IDg2LjQgMTIuNjE3IEwgODYuMiAxMy42MTcgTCA4NS45IDEzLjIxNyBDIDg1LjEgMTIuMDE3IDgzLjMgMTEuNjE3IDgxLjUgMTEuNjE3IEMgNzcuNCAxMS42MTcgNzMuOSAxNC43MTcgNzMuMiAxOS4xMTcgQyA3Mi44IDIxLjMxNyA3My4zIDIzLjQxNyA3NC42IDI0LjgxNyBDIDc1LjcgMjYuMTE3IDc3LjQgMjYuNzE3IDc5LjMgMjYuNzE3IEMgODIuNiAyNi43MTcgODQuNSAyNC42MTcgODQuNSAyNC42MTcgTCA4NC4zIDI1LjYxNyBDIDg0LjIgMjYuMDE3IDg0LjUgMjYuNDE3IDg0LjkgMjYuNDE3IEwgODguMyAyNi40MTcgQyA4OC44IDI2LjQxNyA4OS4zIDI2LjAxNyA4OS40IDI1LjUxNyBMIDkxLjQgMTIuNzE3IEMgOTEuNCAxMi41MTcgOTEuMSAxMi4xMTcgOTAuNyAxMi4xMTcgWiBNIDg1LjUgMTkuMzE3IEMgODUuMSAyMS40MTcgODMuNSAyMi45MTcgODEuMyAyMi45MTcgQyA4MC4yIDIyLjkxNyA3OS40IDIyLjYxNyA3OC44IDIxLjkxNyBDIDc4LjIgMjEuMjE3IDc4IDIwLjMxNyA3OC4yIDE5LjMxNyBDIDc4LjUgMTcuMjE3IDgwLjMgMTUuNzE3IDgyLjQgMTUuNzE3IEMgODMuNSAxNS43MTcgODQuMyAxNi4xMTcgODQuOSAxNi43MTcgQyA4NS41IDE3LjQxNyA4NS43IDE4LjMxNyA4NS41IDE5LjMxNyBaIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA5NS4xIDUuNDE3IEwgOTEuOSAyNS43MTcgQyA5MS44IDI2LjExNyA5Mi4xIDI2LjQxNyA5Mi41IDI2LjQxNyBMIDk1LjcgMjYuNDE3IEMgOTYuMiAyNi40MTcgOTYuNyAyNi4wMTcgOTYuOCAyNS41MTcgTCAxMDAgNS42MTcgQyAxMDAuMSA1LjIxNyA5OS44IDQuOTE3IDk5LjQgNC45MTcgTCA5NS44IDQuOTE3IEMgOTUuNCA0LjkxNyA5NS4yIDUuMTE3IDk1LjEgNS40MTcgWiI+PC9wYXRoPjwvc3ZnPg==" /></div>
                         <!--
-    <div id="wrapperbuy">
-        <div class="cursor" id="buynow" style="margin-right:auto; float: left;"><a>Buy now</a></div>
-        <div class="cursor" id="buynow" style="margin-left:auto; float: right;"><a>Add to cart</a></div>
-    </div>
-        --> 
+                        <div id="wrapperbuy">
+                            <div class="cursor" id="buynow" style="margin-right:auto; float: left;"><a>Buy now</a></div>
+                            <div class="cursor" id="buynow" style="margin-left:auto; float: right;"><a>Add to cart</a></div>
+                        </div>
+                            -->
                         <p style="margin-bottom: 0px; margin-top: 20px;">Distributors (Third Party Sellers):</p>
                         <a target="_blank" href="https://www.aliexpress.com/item/HFSECURITY-DIY-Black-OSU-Keyboard-V4-For-Windows-5-Key-Gaming-Keyboard-USB-2-0-Backlit/32857087236.html?spm=2114.search0104.3.45.2c6c57fdbYhCil&ws_ab_test=searchweb0_0,searchweb201602_10_10065_10068_10843_319_10059_10884_317_10887_10696_321_322_453_10084_454_10083_10103_10618_10304_10307_10820_10301_10821_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=35d4a5ee-a320-4efc-944e-8cc18264dc04-5&algo_pvid=35d4a5ee-a320-4efc-944e-8cc18264dc04"><div class="cursor" id="aliexpress" style="margin-left:auto; margin-right:auto;"><img src="logos/alitext.png" /></div></a>
 
@@ -392,7 +455,7 @@
             <div class="col-md-12 animated2 fadeIn" style="margin-top: auto;">
                 <div id="disqus_thread"></div>
                 <script>
-                    (function () { 
+                    (function () {
                         var d = document, s = d.createElement('script');
                         s.src = 'https://antecer.disqus.com/embed.js';
                         s.setAttribute('data-timestamp', +new Date());
@@ -409,151 +472,6 @@
         </div>
 
         <hr class="changecountryhr" style="margin-top: 70px;" />
-
-        <div class="row">
-            <div class="col-md-12 animated2 fadeIn" style="display:block;">
-                <h4 class="animated fadeIn" style="margin-bottom: 20px; display:block; text-align: left">Change your <a class="animationdelay2s" id="gradient">location</a>!</h4>
-                <p class="animated fadeIn" style="display:block; text-align: left; margin-left: 20px; margin-right: 20px;">Set your shipping destination here. If your country is not listing below, then that means your country is not supported for e-packet shipping!</p>
-            </div>
-        </div>
-
-        <div class="row" style="flex-wrap: nowrap !important;">
-            <div class="col-md-4" style="display:block;">
-                <div class="row">
-                    <div class="mx-auto" style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important;">
-                        <div class="changecountrytab">
-                            <img src="../../flags/au.png" /><a onclick="changeCountryTo('au')">Australia</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/at.png" /><a onclick="changeCountryTo('at')">Austria</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/be.png" /><a onclick="changeCountryTo('be')">Belgium</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/br.png" /><a onclick="changeCountryTo('br')">Brazil</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/ca.png" /><a onclick="changeCountryTo('ca')">Canada</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/hk.png" /><a onclick="changeCountryTo('hk')">China Hong Kong</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/dk.png" /><a onclick="changeCountryTo('dk')">Denmark</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/fi.png" /><a onclick="changeCountryTo('fi')">Finland</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/fr.png" /><a onclick="changeCountryTo('fr')">France</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/gr.png" /><a onclick="changeCountryTo('gr')">Greece</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/hu.png" /><a onclick="changeCountryTo('hu')">Hungary</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/id.png" /><a onclick="changeCountryTo('id')">Indonesia</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/ie.png" /><a onclick="changeCountryTo('ie')">Ireland</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" style="display:block;">
-                <div class="row">
-                    <div class="mx-auto" style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important;">
-                        <div class="changecountrytab">
-                            <img src="../../flags/il.png" /><a onclick="changeCountryTo('il')">Israel</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/it.png" /><a onclick="changeCountryTo('it')">Italy</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/jp.png" /><a onclick="changeCountryTo('jp')">Japan</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/kz.png" /><a onclick="changeCountryTo('kz')">Kazakhstan</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/kr.png" /><a onclick="changeCountryTo('kr')">Korea</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/lu.png" /><a onclick="changeCountryTo('lu')">Luxembourg</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/my.png" /><a onclick="changeCountryTo('my')">Malaysia</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/mx.png" /><a onclick="changeCountryTo('mx')">Mexico</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/nl.png" /><a onclick="changeCountryTo('nl')">Netherlands</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/nz.png" /><a onclick="changeCountryTo('nz')">New Zealand</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/no.png" /><a onclick="changeCountryTo('no')">Norway</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/pl.png" /><a onclick="changeCountryTo('pl')">Poland</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/pt.png" /><a onclick="changeCountryTo('pt')">Portugal</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" style="display:block;">
-                <div class="row">
-                    <div class="mx-auto" style="justify-content: center; align-content: center; margin-bottom: auto; text-align: left !important;">
-                        <div class="changecountrytab">
-                            <img src="../../flags/ru.png" /><a onclick="changeCountryTo('ru')">Russia</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/sa.png" /><a onclick="changeCountryTo('sa')">Saudi Arabia</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/sg.png" /><a onclick="changeCountryTo('sg')">Singapore</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/es.png" /><a onclick="changeCountryTo('es')">Spain</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/se.png" /><a onclick="changeCountryTo('se')">Sweden</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/ch.png" /><a onclick="changeCountryTo('ch')">Switzerland</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/th.png" /><a onclick="changeCountryTo('th')">Thailand</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/tr.png" /><a onclick="changeCountryTo('tr')">Turkey</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/ua.png" /><a onclick="changeCountryTo('ua')">Ukraine</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/gb.png" /><a onclick="changeCountryTo('gb')">United Kingdom</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/us.png" /><a onclick="changeCountryTo('us')">United States</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/vn.png" /><a onclick="changeCountryTo('vn')">Vietnam</a>
-                        </div>
-                        <div class="changecountrytab">
-                            <img src="../../flags/gl.png" /><a onclick="changeCountryTo('gl')">Global</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <hr style="margin-top: 40px;" />
 
